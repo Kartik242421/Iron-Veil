@@ -8,7 +8,10 @@ public class Player1Move : MonoBehaviour
 
     private Animator Anim;
     public float walkSpeed = 0.001f;
-    public float JumpSpeed = 1.0f;
+    private bool isJumping = false;
+    private AnimatorStateInfo Player1Layer0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +22,26 @@ public class Player1Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Player1Layer0 = Anim.GetCurrentAnimatorStateInfo(0);
+
 
         //walking left and right
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            Anim.SetBool("Forward", true);
-            transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
 
-        }
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Player1Layer0.IsTag("Motion"))
         {
-            Anim.SetBool("Backward", true);
-            transform.Translate(-walkSpeed * Time.deltaTime, 0, 0);
 
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                Anim.SetBool("Forward", true);
+                transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
+
+            }
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                Anim.SetBool("Backward", true);
+                transform.Translate(-walkSpeed * Time.deltaTime, 0, 0);
+
+            }
         }
         if (Input.GetAxis("Horizontal") == 0)
         {
@@ -42,9 +52,12 @@ public class Player1Move : MonoBehaviour
         //Jumping and Crouching
         if (Input.GetAxis("Vertical") > 0)
         {
-            Anim.SetTrigger("Jump");
-            transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
-
+            if (isJumping == false)
+            {
+                isJumping = true;
+                Anim.SetTrigger("Jump");
+                StartCoroutine(JumpPause());
+            }
         }
         if (Input.GetAxis("Vertical") < 0)
         {
@@ -55,8 +68,12 @@ public class Player1Move : MonoBehaviour
             Anim.SetBool("Crouch", false);
         }
     }
-
-
     
+    
+    IEnumerator JumpPause()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isJumping = false;
+    }
 }
 
