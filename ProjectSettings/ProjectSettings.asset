@@ -157,7 +157,9 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.DefaultCompany.Iron_veil
+    Standalone: com.DefaultCompany.Iron-veil
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -839,7 +841,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: fad10185-a71c-491c-abf7-3f212d5a3404
   framebufferDepthMemorylessMode: 0
