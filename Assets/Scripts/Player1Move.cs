@@ -10,7 +10,8 @@ public class Player1Move : MonoBehaviour
     public float walkSpeed = 0.001f;
     private bool isJumping = false;
     private AnimatorStateInfo Player1Layer0;
-
+    private bool CanWalkLeft = true;
+    private bool CanWalkRight = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,23 +25,43 @@ public class Player1Move : MonoBehaviour
     {
         Player1Layer0 = Anim.GetCurrentAnimatorStateInfo(0);
 
+        //to bound my player to screen
+        Vector3 ScreenBounds = Camera.main.WorldToScreenPoint(this.transform.position);
+        if (ScreenBounds.x > Screen.width - 20) //right side
+        {
+            CanWalkRight = false;
+        }
+        if (ScreenBounds.x < 20) //left side
+        {
+            CanWalkLeft = false;
+        }
+        else if(ScreenBounds.x > 20 && ScreenBounds.x < Screen.width - 20)
+        {
+            CanWalkRight = true;
+            CanWalkLeft = true;
+        }
 
         //walking left and right
-
         if (Player1Layer0.IsTag("Motion"))
         {
 
             if (Input.GetAxis("Horizontal") > 0)
             {
-                Anim.SetBool("Forward", true);
-                transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
+                if (CanWalkRight == true) //to bound 
+                {
+
+                    Anim.SetBool("Forward", true);
+                    transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
+                }
 
             }
             if (Input.GetAxis("Horizontal") < 0)
             {
-                Anim.SetBool("Backward", true);
-                transform.Translate(-walkSpeed * Time.deltaTime, 0, 0);
-
+                if (CanWalkLeft == true) //to bound 
+                {
+                    Anim.SetBool("Backward", true);
+                    transform.Translate(-walkSpeed * Time.deltaTime, 0, 0);
+                }
             }
         }
         if (Input.GetAxis("Horizontal") == 0)
