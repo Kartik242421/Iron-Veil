@@ -9,21 +9,21 @@ public class Player2Trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player2Actions.HitsP2 == false)
+      /*  if (Player2Actions.HitsP2 == false)
         {
             col.enabled = true;
         }
         else
         {
             col.enabled = false;
-        }
+        }*/
 
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player2"))
         {
-            Player2Actions.HitsP2 = true;
+           // Player2Actions.HitsP2 = true;
             SaveHealthData.player1health -= damageAmt;
             if (SaveHealthData.player1Timer < 2.0f)
             {
