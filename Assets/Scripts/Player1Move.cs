@@ -23,7 +23,7 @@ public class Player1Move : MonoBehaviour
         if (SaveHealthData.player1health <= 0)
         {
             Anim.SetTrigger("Knockout");
-            Player1.GetComponet<Player1Actions>().enabled = false;
+           // Player1.GetComponet<Player1Actions>().enabled = false;
             this.GetComponent<Player1Move>().enabled = false;
         }
         //walking left and right
