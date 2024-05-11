@@ -780,6 +780,10 @@ GameObject:
   - component: {fileID: 423716839}
   - component: {fileID: 423716838}
   - component: {fileID: 423716837}
+  - component: {fileID: 423716844}
+  - component: {fileID: 423716843}
+  - component: {fileID: 423716842}
+  - component: {fileID: 423716841}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -870,6 +874,109 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &423716841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423716836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ae5692fa6fb7c4284a60bf7424f6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxIcons: 6
+  IconsPerRow: 3
+  MaxRows: 2
+  EveP2: {fileID: 0}
+  MorakP2: {fileID: 0}
+  MariaP2: {fileID: 0}
+  ElyP2: {fileID: 0}
+  SynthP2: {fileID: 0}
+  VanguardP2: {fileID: 0}
+  EveP2Text: {fileID: 73689199}
+  MorakP2Text: {fileID: 205434879}
+  MariaP2Text: {fileID: 1904793554}
+  ElyP2Text: {fileID: 1562598613}
+  SynthP2Text: {fileID: 1258935274}
+  VanguardP2Text: {fileID: 1044487795}
+  Player2Name: {fileID: 0}
+  CharacterSelectionP2: 
+  Scene: 1
+--- !u!114 &423716842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423716836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f60e5e4ab14e7e42a6d53b05f720a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxIcons: 6
+  IconsPerRow: 3
+  MaxRows: 2
+  EveP2: {fileID: 0}
+  MorakP2: {fileID: 0}
+  MariaP2: {fileID: 0}
+  ElyP2: {fileID: 0}
+  SynthP2: {fileID: 0}
+  VanguardP2: {fileID: 0}
+  EveP2Text: {fileID: 1130777026}
+  MorakP2Text: {fileID: 162380561}
+  MariaP2Text: {fileID: 137420619}
+  ElyP2Text: {fileID: 1789015780}
+  SynthP2Text: {fileID: 2030661374}
+  VanguardP2Text: {fileID: 663731762}
+  Player2Name: {fileID: 0}
+  CharacterSelectionP2: 
+  TimerMax: 0.6
+  Scene: 1
+--- !u!114 &423716843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423716836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8732ed00696355d43ad89e4e6343c081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxIcons: 6
+  IconsPerRow: 3
+  MaxRows: 2
+  EveP1: {fileID: 0}
+  MorakP1: {fileID: 0}
+  MariaP1: {fileID: 0}
+  ElyP1: {fileID: 0}
+  SynthP1: {fileID: 0}
+  VanguardP1: {fileID: 0}
+  EveP1Text: {fileID: 322532372}
+  MorakP1Text: {fileID: 996235844}
+  MariaP1Text: {fileID: 1814141039}
+  ElyP1Text: {fileID: 1692825212}
+  SynthP1Text: {fileID: 598548931}
+  VanguardP1Text: {fileID: 1372573311}
+  Player1Name: {fileID: 0}
+  CharacterSelectionP1: 
+  TimerMax: 0.6
+--- !u!114 &423716844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423716836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e342a0d8a3f41514687ef37ffec775bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &576117931
 GameObject:
   m_ObjectHideFlags: 0
