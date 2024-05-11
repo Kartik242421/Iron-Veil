@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UIDisable : MonoBehaviour
 {
     public GameObject gameObjectToControl;
@@ -11,5 +11,9 @@ public class UIDisable : MonoBehaviour
 
         // Enable or disable the GameObject based on the platform
         gameObjectToControl.SetActive(isMobilePlatform);
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene(0);
     }
 }
