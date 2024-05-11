@@ -13,29 +13,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Jump",
-                    "type": "Value",
-                    "id": "334e1757-eeaf-4f52-8a35-ffaf2af81cda",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "95aaea2d-dd96-4c35-8959-ab40e571edb0",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "5fa92e0c-c183-4f09-b597-e63220a34dee",
@@ -84,6 +64,61 @@
                     "name": "right",
                     "id": "4db20071-1500-4e5e-a995-9c4a9bf58b55",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "52e6e4e8-9329-4059-9ec9-b33e5ebe4854",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "264137a1-1e54-4ec8-b08f-e82de3126926",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "6b12c616-dd4b-4173-975f-51fc02068b51",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "23303477-b790-4190-aa0f-2b7f69348c98",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "25ec10c4-567b-4f25-a955-27765ff7c0d0",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

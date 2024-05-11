@@ -294,10 +294,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c763145d-db86-4e64-8f6f-8a06e7cfa769
     m_ActionName: Player1ActionMap/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 334e1757-eeaf-4f52-8a35-ffaf2af81cda
-    m_ActionName: Player1ActionMap/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1ActionMap

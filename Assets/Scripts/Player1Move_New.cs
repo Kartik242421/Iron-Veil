@@ -6,11 +6,13 @@ using UnityEngine.InputSystem;
 public class Player1Move_New : MonoBehaviour
 {
     public float speed = 1f;
-    private Vector2 movementInput;
     private Animator anim;
+    private Vector2 movementInput;
     private bool isJumping = false;
     private bool isCrouching = false;
     private bool canMove = true; // Flag to control movement
+    private bool canWalkLeft = true; // Flag to control walking left
+    private bool canWalkRight = true; // Flag to control walking right
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class Player1Move_New : MonoBehaviour
         }
         Jump();
         Crouch();
+        CheckScreenBounds();
     }
 
     public void OnMovementEvent(InputAction.CallbackContext ctx)
@@ -36,18 +39,23 @@ public class Player1Move_New : MonoBehaviour
     {
         if (!isJumping) // Only allow movement if not jumping
         {
-            Vector3 movement = new Vector3(movementInput.x, 0, 0);
-            transform.Translate(movement * speed * Time.deltaTime);
-
-            // Check if the player is within screen bounds
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-            if (screenPos.x <= 20 && movementInput.x < 0) // Left bound
+            float horizontalInput = movementInput.x;
+            if (horizontalInput > 0 && canWalkRight) // Moving right
             {
-                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(20, screenPos.y, screenPos.z));
+                anim.SetBool("Forward", true);
+                anim.SetBool("Backward", false);
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
-            else if (screenPos.x >= Screen.width - 20 && movementInput.x > 0) // Right bound
+            else if (horizontalInput < 0 && canWalkLeft) // Moving left
             {
-                transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - 20, screenPos.y, screenPos.z));
+                anim.SetBool("Forward", false);
+                anim.SetBool("Backward", true);
+                transform.Translate(Vector3.left * speed * Time.deltaTime);
+            }
+            else // No movement
+            {
+                anim.SetBool("Forward", false);
+                anim.SetBool("Backward", false);
             }
         }
     }
@@ -83,6 +91,24 @@ public class Player1Move_New : MonoBehaviour
             isCrouching = false;
             anim.SetBool("Crouch", false);
             canMove = true; // Enable movement after standing up from crouch
+        }
+    }
+
+    void CheckScreenBounds()
+    {
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if (screenPos.x <= 20)
+        {
+            canWalkLeft = false;
+        }
+        else if (screenPos.x >= Screen.width - 20)
+        {
+            canWalkRight = false;
+        }
+        else
+        {
+            canWalkLeft = true;
+            canWalkRight = true;
         }
     }
 }
