@@ -27,4 +27,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+    public void OptionScreen()
+    {
+        SceneManager.LoadScene(3);
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    public void ControlsScreen()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
