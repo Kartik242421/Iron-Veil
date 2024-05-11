@@ -19,13 +19,7 @@ public class Player1Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Check Player Knockout
-        if (SaveHealthData.player1health <= 0)
-        {
-            Anim.SetTrigger("Knockout");
-           // Player1.GetComponet<Player1Actions>().enabled = false;
-            this.GetComponent<Player1Move>().enabled = false;
-        }
+       
         //walking left and right
         if (Input.GetAxis("Horizontal") > 0)
         {
