@@ -75,12 +75,69 @@ public class Player1Move_New : MonoBehaviour
             LightPunch();
         }
     }
+
+    public void OnHeavyPunchEvent(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            HeavyPunch();
+        }
+    }
+    public void OnLightKickEvent(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            LightKick();
+        }
+    }
+    public void OnHeavyKickEvent(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            HeavyKick();
+        }
+    }
     void LightPunch()
     {
         if (!isJumping && !isCrouching)
         {
             // Perform light punch animation
             anim.SetTrigger("LightPunch");
+
+            // Perform any other actions related to light punch (e.g., dealing damage)
+            // You need to implement this part based on your game's logic.
+        }
+    }
+
+    void HeavyPunch()
+    {
+        if (!isJumping && !isCrouching)
+        {
+            // Perform light punch animation
+            anim.SetTrigger("HeavyPunch");
+
+            // Perform any other actions related to light punch (e.g., dealing damage)
+            // You need to implement this part based on your game's logic.
+        }
+    }
+
+    void LightKick()
+    {
+        if (!isJumping && !isCrouching)
+        {
+            // Perform light punch animation
+            anim.SetTrigger("LightKick");
+
+            // Perform any other actions related to light punch (e.g., dealing damage)
+            // You need to implement this part based on your game's logic.
+        }
+    }
+    void HeavyKick()
+    {
+        if (!isJumping && !isCrouching)
+        {
+            // Perform light punch animation
+            anim.SetTrigger("HeavyKick");
 
             // Perform any other actions related to light punch (e.g., dealing damage)
             // You need to implement this part based on your game's logic.
