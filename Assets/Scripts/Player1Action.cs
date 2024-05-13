@@ -23,4 +23,16 @@ public class Player1Action : MonoBehaviour
         Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
         
     }
+    public void FlipUp()
+    {
+        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
+        Player1.transform.Translate(1f * Time.deltaTime, 0, 0);
+
+    }
+    public void FlipBack()
+    {
+        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
+        Player1.transform.Translate(1f * Time.deltaTime, 0, 0);
+
+    }
 }
