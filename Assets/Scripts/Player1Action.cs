@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player1Action : MonoBehaviour
 {
-    public float JumpSpeed = 100f;
+    public float JumpSpeed = 20f;
     public GameObject Player1;
     // Start is called before the first frame update
     void Start()
@@ -20,19 +20,19 @@ public class Player1Action : MonoBehaviour
 
     public void JumpUp()
     {
-        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
+        Player1.transform.Translate(0, JumpSpeed , 0);
         
     }
     public void FlipUp()
     {
-        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
-        Player1.transform.Translate(1f * Time.deltaTime, 0, 0);
+        Player1.transform.Translate(0, JumpSpeed , 0);
+        Player1.transform.Translate(1f , 0, 0);
 
     }
     public void FlipBack()
     {
-        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
-        Player1.transform.Translate(-1f * Time.deltaTime, 0, 0);
+        Player1.transform.Translate(0, JumpSpeed , 0);
+        Player1.transform.Translate(-1f , 0, 0);
 
     }
 }
