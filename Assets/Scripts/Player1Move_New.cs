@@ -30,15 +30,20 @@ public class Player1Move_New : MonoBehaviour
     void Update()
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
-        Move();
-        /*_if (canMove)
+        
+        if (canMove)
         {
             Move();
-        }*/
+        }
         Jump();
         Crouch();
         CheckScreenBounds();
+        OppPositionMovement();
+    }
 
+
+    public void OppPositionMovement()
+    {
         //get Opp position
         OppPosition = Opponent.transform.position;
 
@@ -54,35 +59,21 @@ public class Player1Move_New : MonoBehaviour
             StartCoroutine(FaceRight());
 
         }
-
     }
 
-    public void OnMovementEvent(InputAction.CallbackContext ctx)
+    public void OnMovementEvent (InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
+    }
+    public void OnLightPunchEvent (InputAction.CallbackContext ctx)
+    {
+        
     }
 
     void Move()
     {
-        float horizontalInput = movementInput.x;
-        if (horizontalInput > 0 && canWalkRight) // Moving right
-        {
-            anim.SetBool("Forward", true);
-            anim.SetBool("Backward", false);
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
-        else if (horizontalInput < 0 && canWalkLeft) // Moving left
-        {
-            anim.SetBool("Forward", false);
-            anim.SetBool("Backward", true);
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-        else // No movement
-        {
-            anim.SetBool("Forward", false);
-            anim.SetBool("Backward", false);
-        }
-        /*(if (!isJumping && playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
+        
+        if (!isJumping && playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
         {
             float horizontalInput = movementInput.x;
             if (horizontalInput > 0 && canWalkRight) // Moving right
@@ -102,7 +93,7 @@ public class Player1Move_New : MonoBehaviour
                 anim.SetBool("Forward", false);
                 anim.SetBool("Backward", false);
             }
-        }*/
+        }
     }
 
     void Jump()
