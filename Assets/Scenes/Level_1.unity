@@ -3531,7 +3531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb82bbfc589711445965e01a71c934c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpSpeed: 100
+  JumpSpeed: 1
   Player1: {fileID: 144959455}
 --- !u!1 &1825572966
 GameObject:
@@ -3955,7 +3955,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 821
+    m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
