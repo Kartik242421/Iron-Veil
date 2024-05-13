@@ -22,6 +22,8 @@ public class Player1Move_New : MonoBehaviour
     private bool FacingRight = true;
 
 
+    //public InputActionReference lightPunchAction;
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -65,9 +67,24 @@ public class Player1Move_New : MonoBehaviour
     {
         movementInput = ctx.ReadValue<Vector2>();
     }
-    public void OnLightPunchEvent (InputAction.CallbackContext ctx)
+
+    public void OnLightPunchEvent(InputAction.CallbackContext ctx)
     {
-        
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            LightPunch();
+        }
+    }
+    void LightPunch()
+    {
+        if (!isJumping && !isCrouching)
+        {
+            // Perform light punch animation
+            anim.SetTrigger("LightPunch");
+
+            // Perform any other actions related to light punch (e.g., dealing damage)
+            // You need to implement this part based on your game's logic.
+        }
     }
 
     void Move()

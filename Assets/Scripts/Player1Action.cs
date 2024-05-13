@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player1Action : MonoBehaviour
 {
-    public float JumpSpeed = 1.0f;
+    public float JumpSpeed = 100f;
     public GameObject Player1;
     // Start is called before the first frame update
     void Start()
