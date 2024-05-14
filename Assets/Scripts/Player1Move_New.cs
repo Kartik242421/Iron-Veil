@@ -43,106 +43,12 @@ public class Player1Move_New : MonoBehaviour
         OppPositionMovement();
     }
 
-
-    public void OppPositionMovement()
-    {
-        //get Opp position
-        OppPosition = Opponent.transform.position;
-
-
-        //facing left or right of the opponent
-        if (OppPosition.x > Player1.transform.position.x)
-        {
-            StartCoroutine(FaceLeft());
-
-        }
-        if (OppPosition.x < Player1.transform.position.x)
-        {
-            StartCoroutine(FaceRight());
-
-        }
-    }
-
     public void OnMovementEvent (InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
     }
 
-    public void OnLightPunchEvent(InputAction.CallbackContext ctx)
-    {
-        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
-        {
-            LightPunch();
-        }
-    }
-
-    public void OnHeavyPunchEvent(InputAction.CallbackContext ctx)
-    {
-        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
-        {
-            HeavyPunch();
-        }
-    }
-    public void OnLightKickEvent(InputAction.CallbackContext ctx)
-    {
-        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
-        {
-            LightKick();
-        }
-    }
-    public void OnHeavyKickEvent(InputAction.CallbackContext ctx)
-    {
-        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
-        {
-            HeavyKick();
-        }
-    }
-    void LightPunch()
-    {
-        if (!isJumping && !isCrouching)
-        {
-            // Perform light punch animation
-            anim.SetTrigger("LightPunch");
-
-            // Perform any other actions related to light punch (e.g., dealing damage)
-            // You need to implement this part based on your game's logic.
-        }
-    }
-
-    void HeavyPunch()
-    {
-        if (!isJumping && !isCrouching)
-        {
-            // Perform light punch animation
-            anim.SetTrigger("HeavyPunch");
-
-            // Perform any other actions related to light punch (e.g., dealing damage)
-            // You need to implement this part based on your game's logic.
-        }
-    }
-
-    void LightKick()
-    {
-        if (!isJumping && !isCrouching)
-        {
-            // Perform light punch animation
-            anim.SetTrigger("LightKick");
-
-            // Perform any other actions related to light punch (e.g., dealing damage)
-            // You need to implement this part based on your game's logic.
-        }
-    }
-    void HeavyKick()
-    {
-        if (!isJumping && !isCrouching)
-        {
-            // Perform light punch animation
-            anim.SetTrigger("HeavyKick");
-
-            // Perform any other actions related to light punch (e.g., dealing damage)
-            // You need to implement this part based on your game's logic.
-        }
-    }
+   
 
     void Move()
     {
@@ -183,7 +89,7 @@ public class Player1Move_New : MonoBehaviour
 
     IEnumerator ResetJump()
     {
-        yield return new WaitForSeconds(0.1f); // Adjust as needed
+        yield return new WaitForSeconds(0.2f); // Adjust as needed
         isJumping = false;
         canMove = true; // Enable movement after finishing jump animation
     }
@@ -221,6 +127,26 @@ public class Player1Move_New : MonoBehaviour
             canWalkRight = true;
         }
     }
+
+    public void OppPositionMovement()
+    {
+        //get Opp position
+        OppPosition = Opponent.transform.position;
+
+
+        //facing left or right of the opponent
+        if (OppPosition.x > Player1.transform.position.x)
+        {
+            StartCoroutine(FaceLeft());
+
+        }
+        if (OppPosition.x < Player1.transform.position.x)
+        {
+            StartCoroutine(FaceRight());
+
+        }
+    }
+
 
     IEnumerator FaceRight()
     {
