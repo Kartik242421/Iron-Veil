@@ -201,6 +201,13 @@ public class P2Select : MonoBehaviour
         SynthP2Text.gameObject.SetActive(false);
         VanguardP2Text.gameObject.SetActive(false);
     }
+    public void choose()
+    {
+        SaveHealthData.P2Select = CharacterSelectionP2;
+        MyPlayer.Play();
+        SceneManager.LoadScene(Scene);
+
+    }
   
 }
 
