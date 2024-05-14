@@ -8,21 +8,38 @@ public class Player1Move_New : MonoBehaviour
     public float speed = 1f;
     private Animator anim;
     private Vector2 movementInput;
-    private bool isJumping = false;
-    private bool isCrouching = false;
-    private bool canMove = true; // Flag to control movement
-    private bool canWalkLeft = true; // Flag to control walking left
-    private bool canWalkRight = true; // Flag to control walking right
+    public static bool isJumping = false;
+    public static bool isCrouching = false;
+    public static bool canMove = true; // Flag to control movement
+    public static bool canWalkLeft = true; // Flag to control walking left
+    public static bool canWalkRight = true; // Flag to control walking right
     private AnimatorStateInfo playerAnimatorState; // Animator state info
 
     public GameObject Player1;
     public GameObject Opponent;
     private Vector3 OppPosition;
-    private bool FacingLeft = false;
-    private bool FacingRight = true;
+    public static bool FacingLeft = false;
+    public static bool FacingRight = true;
 
 
     //public InputActionReference lightPunchAction;
+    public InputActionReference blockAction;
+
+    void Awake()
+    {
+        blockAction.action.performed += ctx => OnBlockEvent(ctx); // Subscribe to the block action
+        blockAction.action.canceled += ctx => EndBlock(); // Subscribe to the block action cancellation
+    }
+
+    void OnEnable()
+    {
+        blockAction.action.Enable(); // Enable the block action
+    }
+
+    void OnDisable()
+    {
+        blockAction.action.Disable(); // Disable the block action
+    }
 
     void Start()
     {
@@ -171,5 +188,26 @@ public class Player1Move_New : MonoBehaviour
             Player1.transform.Rotate(0, 180, 0);
             anim.SetLayerWeight(1, 0);
         }
+    }
+
+    public void OnBlockEvent(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            StartBlock();
+        }
+    }
+
+    //calling for animations:-
+    void StartBlock()
+    {
+        // Start blocking animation or any other actions related to starting block
+        anim.SetTrigger("BlockOn");
+    }
+
+    void EndBlock()
+    {
+        // End blocking animation or any other actions related to ending block
+        anim.SetTrigger("BlockOff");
     }
 }
