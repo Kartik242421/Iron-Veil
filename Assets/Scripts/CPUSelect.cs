@@ -36,7 +36,7 @@ public class CPUSelect : MonoBehaviour
     private bool ChangeCharacter = false;
     private AudioSource MyPlayer;
 
-    public int Scene = 4;
+    public int Scene = 1;
 
     [Header("Mobile UI")]
     public Text MobileP2;

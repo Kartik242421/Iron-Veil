@@ -39,7 +39,7 @@ public class P2Select : MonoBehaviour
     private bool ChangeCharacter = false;
     private AudioSource MyPlayer;
 
-    public int Scene = 4;
+    public int Scene = 1;
 
     
 

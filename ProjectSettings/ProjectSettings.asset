@@ -823,13 +823,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Build: 0
-    Game Performance: 0
-    Legacy Analytics: 0
-    Purchasing: 0
-    UDP: 0
     UNet: 1
-    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -849,11 +843,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 16015d88-5c87-4788-b5e4-d37188fc042f
+  cloudProjectId: fad10185-a71c-491c-abf7-3f212d5a3404
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Iron_veil
-  organizationId: ggauraang
+  organizationId: kartik242421
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
