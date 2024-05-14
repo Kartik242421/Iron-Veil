@@ -929,6 +929,7 @@ MonoBehaviour:
   LevelBG10: {fileID: 192331613}
   leftbutton: {fileID: 1993586522}
   rightbutton: {fileID: 1553843203}
+  Scene: 3
 --- !u!1 &891048977
 GameObject:
   m_ObjectHideFlags: 0
