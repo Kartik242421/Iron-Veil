@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 144959459}
   - component: {fileID: 144959458}
   - component: {fileID: 144959457}
-  - component: {fileID: 144959456}
   - component: {fileID: 144959463}
   m_Layer: 0
   m_Name: Eve
@@ -240,19 +239,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &144959456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144959455}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fb33704796cdb429967d8e3cb6335a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 3
 --- !u!114 &144959457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +496,10 @@ MonoBehaviour:
   speed: 2
   Player1: {fileID: 1609217039}
   Opponent: {fileID: 2078706075}
+  LightPunch: {fileID: 8300000, guid: 0e83cf67f84e6c045a8908374486fec2, type: 3}
+  HeavyPunch: {fileID: 8300000, guid: 7289cfc03dfbbb249bc20783f8316dc3, type: 3}
+  LightKick: {fileID: 8300000, guid: d5dd7fe149a25694b89c680e7f2efc6c, type: 3}
+  HeavyKick: {fileID: 8300000, guid: baa3e98529e8d094b8e0c35daf8d4dd7, type: 3}
   blockAction: {fileID: -7387842667127760921, guid: 43888cf83fce5b34fbef2272c05bca6b, type: 3}
 --- !u!1 &197724135
 GameObject:
@@ -1511,15 +1501,15 @@ AudioReverbZone:
   m_Enabled: 1
   m_MinDistance: 1
   m_MaxDistance: 10000
-  m_ReverbPreset: 15
+  m_ReverbPreset: 12
   m_Room: -1000
-  m_RoomHF: -270
-  m_DecayTime: 1.49
-  m_DecayHFRatio: 0.86
-  m_Reflections: -1204
-  m_ReflectionsDelay: 0.007
-  m_Reverb: -4
-  m_ReverbDelay: 0.011
+  m_RoomHF: -4000
+  m_DecayTime: 0.3
+  m_DecayHFRatio: 0.1
+  m_Reflections: -1831
+  m_ReflectionsDelay: 0.002
+  m_Reverb: -1630
+  m_ReverbDelay: 0.03
   m_HFReference: 5000
   m_Diffusion: 100
   m_Density: 100
@@ -1822,7 +1812,7 @@ GameObject:
   - component: {fileID: 947867780}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: FistLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

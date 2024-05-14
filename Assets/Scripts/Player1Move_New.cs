@@ -21,6 +21,13 @@ public class Player1Move_New : MonoBehaviour
     public static bool FacingLeft = false;
     public static bool FacingRight = true;
 
+    //sound
+    public AudioClip LightPunch;
+    public AudioClip HeavyPunch;
+    public AudioClip LightKick;
+    public AudioClip HeavyKick;
+    private AudioSource MyPlayer;
+
 
     //public InputActionReference lightPunchAction;
     public InputActionReference blockAction;
@@ -44,6 +51,7 @@ public class Player1Move_New : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        MyPlayer = GetComponentInChildren<AudioSource>();
     }
 
     void Update()
@@ -60,9 +68,33 @@ public class Player1Move_New : MonoBehaviour
         OppPositionMovement();
     }
 
+    //reaction
     private void OnTriggerEnter(Collider other)
     {
-        anim.SetTrigger("BigReact");
+        if (other.gameObject.CompareTag("FistLight"))
+        {
+            anim.SetTrigger("HeadReact");
+            MyPlayer.clip = LightPunch;
+            MyPlayer.Play();
+        }
+        if (other.gameObject.CompareTag("FistHeavy"))
+        {
+            anim.SetTrigger("BigReact");
+            MyPlayer.clip = HeavyPunch;
+            MyPlayer.Play();
+        }
+        if (other.gameObject.CompareTag("KickHeavy"))
+        {
+            anim.SetTrigger("BigReact");
+            MyPlayer.clip = HeavyKick;
+            MyPlayer.Play();
+        }
+        if (other.gameObject.CompareTag("KickLight"))
+        {
+            anim.SetTrigger("HeadReact");
+            MyPlayer.clip = LightKick;
+            MyPlayer.Play();
+        }
     }
 
     public void OnMovementEvent (InputAction.CallbackContext ctx)
