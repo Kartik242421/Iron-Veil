@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using Unity.VisualScripting;
 
 public class P1Select : MonoBehaviour
@@ -24,9 +24,9 @@ public class P1Select : MonoBehaviour
     public GameObject SynthP1Text;
     public GameObject VanguardP1Text;
 
-    public TextMeshProUGUI Player1Name;
+    public Text Player1Name;
 
-    public string CharacterSelectionP1;
+    public string CharacterSelectionP1;     
 
     private int IconNumber = 1;
     private int RowNumber = 1;

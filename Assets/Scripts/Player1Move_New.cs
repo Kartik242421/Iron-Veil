@@ -18,8 +18,8 @@ public class Player1Move_New : MonoBehaviour
     public GameObject Player1;
     public GameObject Opponent;
     private Vector3 OppPosition;
-    private bool FacingLeft = false;
-    private bool FacingRight = true;
+    public static bool FacingLeft = false;
+    public static bool FacingRight = true;
 
 
     void Start()

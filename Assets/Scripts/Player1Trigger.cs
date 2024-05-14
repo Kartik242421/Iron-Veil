@@ -24,10 +24,10 @@ public class Player1Trigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player2"))
         {
            // Player1Actions.Hits = true;
-            SaveHealthData.player2health -= damageAmt;
-            if (SaveHealthData.player2Timer < 2.0f)
+            SaveHealthData.Player2Health -= damageAmt;
+            if (SaveHealthData.Player2Timer < 2.0f)
             {
-                SaveHealthData.player2Timer += 2.0f;
+                SaveHealthData.Player2Timer += 2.0f;
             }
             
         }

@@ -19,30 +19,30 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Player1Green.fillAmount = SaveHealthData.player1health;
-        Player2Green.fillAmount = SaveHealthData.player2health;
+        Player1Green.fillAmount = SaveHealthData.Player1Health;
+        Player2Green.fillAmount = SaveHealthData.Player2Health;
         
-        if (SaveHealthData.player2Timer > 0)
+        if (SaveHealthData.Player2Timer > 0)
         {
-            SaveHealthData.player2Timer-= 2.0f * Time.deltaTime;
+            SaveHealthData.Player2Timer -= 2.0f * Time.deltaTime;
         }
 
-        if (SaveHealthData.player2Timer <= 0)
+        if (SaveHealthData.Player2Timer <= 0)
         {
-            if (Player2Red.fillAmount > SaveHealthData.player2health)
+            if (Player2Red.fillAmount > SaveHealthData.Player2Health)
             {
                 Player2Red.fillAmount -= 0.003f;
 
             }
         }
-        if (SaveHealthData.player1Timer > 0)
+        if (SaveHealthData.Player1Timer > 0)
         {
-            SaveHealthData.player1Timer -= 2.0f * Time.deltaTime;
+            SaveHealthData.Player1Timer -= 2.0f * Time.deltaTime;
         }
 
-        if (SaveHealthData.player1Timer <= 0)
+        if (SaveHealthData.Player1Timer <= 0)
         {
-            if (Player1Red.fillAmount > SaveHealthData.player1health)
+            if (Player1Red.fillAmount > SaveHealthData.Player1Health)
             {
                 Player1Red.fillAmount -= 0.003f;
 
