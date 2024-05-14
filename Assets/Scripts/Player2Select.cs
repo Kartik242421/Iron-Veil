@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEngine.AudioSettings;
+using UnityEngine.TextCore;
+using UnityEngine.UIElements;
 
 public class P2Select : MonoBehaviour
 {
@@ -38,6 +41,8 @@ public class P2Select : MonoBehaviour
 
     public int Scene = 1;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +67,7 @@ public class P2Select : MonoBehaviour
                 CharacterSelectionP2 = "EveP2";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 2)
+            if (IconNumber == 4)
             {
                 SwitchOff();
                 MorakP2.gameObject.SetActive(true);
@@ -80,7 +85,7 @@ public class P2Select : MonoBehaviour
                 CharacterSelectionP2 = "MariaP2";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 4)
+            if (IconNumber == 2)
             {
                 SwitchOff();
                 ElyP2.gameObject.SetActive(true);
@@ -196,4 +201,6 @@ public class P2Select : MonoBehaviour
         SynthP2Text.gameObject.SetActive(false);
         VanguardP2Text.gameObject.SetActive(false);
     }
+  
 }
+
