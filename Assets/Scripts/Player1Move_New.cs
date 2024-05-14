@@ -60,6 +60,11 @@ public class Player1Move_New : MonoBehaviour
         OppPositionMovement();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        anim.SetTrigger("BigReact");
+    }
+
     public void OnMovementEvent (InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
