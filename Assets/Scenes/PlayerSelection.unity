@@ -4493,7 +4493,7 @@ MonoBehaviour:
   VanguardP2Text: {fileID: 1044487795}
   Player2Name: {fileID: 1067851281}
   CharacterSelectionP2: 
-  Scene: 1
+  Scene: 4
   MobileP2: {fileID: 168382005}
 --- !u!114 &423716842
 MonoBehaviour:
@@ -4525,7 +4525,7 @@ MonoBehaviour:
   Player2Name: {fileID: 1067851281}
   CharacterSelectionP2: 
   TimerMax: 0.6
-  Scene: 1
+  Scene: 4
 --- !u!114 &423716843
 MonoBehaviour:
   m_ObjectHideFlags: 0
