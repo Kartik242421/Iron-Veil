@@ -658,7 +658,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648641799}
   - component: {fileID: 648641801}
-  - component: {fileID: 648641800}
+  - component: {fileID: 648641802}
   m_Layer: 5
   m_Name: Select level
   m_TagString: Untagged
@@ -682,10 +682,18 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -143}
-  m_SizeDelta: {x: 300, y: 50}
+  m_AnchoredPosition: {x: -6.2752, y: -143}
+  m_SizeDelta: {x: 287.4495, y: 59.861}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &648641800
+--- !u!222 &648641801
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648641798}
+  m_CullTransparentMesh: 1
+--- !u!114 &648641802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -719,14 +727,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Select Level
---- !u!222 &648641801
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648641798}
-  m_CullTransparentMesh: 1
 --- !u!1 &702117491
 GameObject:
   m_ObjectHideFlags: 0
