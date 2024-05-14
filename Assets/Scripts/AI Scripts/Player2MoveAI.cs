@@ -99,20 +99,19 @@ public class Player2MoveAI : MonoBehaviour
             }
 
             //Cannot exit screen
-            Vector3 ScreenBounds = Camera.main.WorldToScreenPoint(this.transform.position);
-
-            if (ScreenBounds.x > Screen.width - 200)
-            {
-                CanWalkRight = false;
-            }
-            if (ScreenBounds.x < 200)
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+            if (screenPos.x <= 20)
             {
                 CanWalkLeft = false;
             }
-            else if (ScreenBounds.x > 200 && ScreenBounds.x < Screen.width - 200)
+            else if (screenPos.x >= Screen.width - 20)
             {
-                CanWalkRight = true;
+                CanWalkRight = false;
+            }
+            else
+            {
                 CanWalkLeft = true;
+                CanWalkRight = true;
             }
 
             //Get the opponent's position
