@@ -13,6 +13,8 @@ public class Player1Move : MonoBehaviour
     private bool CanWalkLeft = true;
     private bool CanWalkRight = true;
 
+    public static bool FacingLeft { get; internal set; }
+
     // Start is called before the first frame update
     void Start()
     {
