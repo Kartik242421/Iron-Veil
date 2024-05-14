@@ -22,6 +22,8 @@ public class Player1Move_New : MonoBehaviour
     public static bool FacingRight = true;
 
 
+    //public InputActionReference lightPunchAction;
+
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -30,7 +32,7 @@ public class Player1Move_New : MonoBehaviour
     void Update()
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
-
+        
         if (canMove)
         {
             Move();
@@ -38,32 +40,19 @@ public class Player1Move_New : MonoBehaviour
         Jump();
         Crouch();
         CheckScreenBounds();
-
-        //get Opp position
-        OppPosition = Opponent.transform.position;
-
-
-        //facing left or right of the opponent
-        if (OppPosition.x > Player1.transform.position.x)
-        {
-            StartCoroutine(FaceLeft());
-
-        }
-        if (OppPosition.x < Player1.transform.position.x)
-        {
-            StartCoroutine(FaceRight());
-
-        }
-
+        OppPositionMovement();
     }
 
-    public void OnMovementEvent(InputAction.CallbackContext ctx)
+    public void OnMovementEvent (InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
     }
 
+   
+
     void Move()
     {
+        
         if (!isJumping && playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
         {
             float horizontalInput = movementInput.x;
@@ -100,7 +89,7 @@ public class Player1Move_New : MonoBehaviour
 
     IEnumerator ResetJump()
     {
-        yield return new WaitForSeconds(0.1f); // Adjust as needed
+        yield return new WaitForSeconds(0.2f); // Adjust as needed
         isJumping = false;
         canMove = true; // Enable movement after finishing jump animation
     }
@@ -138,6 +127,26 @@ public class Player1Move_New : MonoBehaviour
             canWalkRight = true;
         }
     }
+
+    public void OppPositionMovement()
+    {
+        //get Opp position
+        OppPosition = Opponent.transform.position;
+
+
+        //facing left or right of the opponent
+        if (OppPosition.x > Player1.transform.position.x)
+        {
+            StartCoroutine(FaceLeft());
+
+        }
+        if (OppPosition.x < Player1.transform.position.x)
+        {
+            StartCoroutine(FaceRight());
+
+        }
+    }
+
 
     IEnumerator FaceRight()
     {
