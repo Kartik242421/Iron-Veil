@@ -37,7 +37,7 @@ public class P2Select : MonoBehaviour
     public float TimerMax = 0.6f;
     private bool TimeCountDown = false;
     private bool ChangeCharacter = false;
-    private AudioSource MyPlayer;
+    public AudioSource MyPlayer;
 
     public int Scene = 4;
 
