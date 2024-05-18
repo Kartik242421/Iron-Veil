@@ -16,7 +16,7 @@ public class LevelSelect : MonoBehaviour
     public GameObject LevelBG9;
     public GameObject LevelBG10;
     private int MaxLevels = 10;
-    private int CurrentLevel = 1;
+    public static int CurrentLevel = 1;
     private float PauseTime = 0.4f;
     private bool TimeCountDown = false;
     public GameObject leftbutton;

@@ -56,7 +56,7 @@ public class Player2TriggerAI : MonoBehaviour
         {
             if (Player2 == true)
             {
-                if (other.gameObject.CompareTag("Player1"))
+                if (other.gameObject.CompareTag("Player"))
                 {
                     if (EmitFX == true)
                     {
