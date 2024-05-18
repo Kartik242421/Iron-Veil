@@ -71,6 +71,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""75d8dc45-d18e-4db8-9a53-971600617376"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -143,7 +152,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""264137a1-1e54-4ec8-b08f-e82de3126926"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -326,6 +335,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""HeavyKick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43f16b8b-bdb6-4cc8-999e-e569b6fc05b9"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4891999-e8c7-451d-aa93-a4a012039b12"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -339,6 +370,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player1ActionMap_HeavyPunch = m_Player1ActionMap.FindAction("HeavyPunch", throwIfNotFound: true);
         m_Player1ActionMap_LightKick = m_Player1ActionMap.FindAction("LightKick", throwIfNotFound: true);
         m_Player1ActionMap_HeavyKick = m_Player1ActionMap.FindAction("HeavyKick", throwIfNotFound: true);
+        m_Player1ActionMap_Block = m_Player1ActionMap.FindAction("Block", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -405,6 +437,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1ActionMap_HeavyPunch;
     private readonly InputAction m_Player1ActionMap_LightKick;
     private readonly InputAction m_Player1ActionMap_HeavyKick;
+    private readonly InputAction m_Player1ActionMap_Block;
     public struct Player1ActionMapActions
     {
         private @PlayerInput m_Wrapper;
@@ -414,6 +447,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @HeavyPunch => m_Wrapper.m_Player1ActionMap_HeavyPunch;
         public InputAction @LightKick => m_Wrapper.m_Player1ActionMap_LightKick;
         public InputAction @HeavyKick => m_Wrapper.m_Player1ActionMap_HeavyKick;
+        public InputAction @Block => m_Wrapper.m_Player1ActionMap_Block;
         public InputActionMap Get() { return m_Wrapper.m_Player1ActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -438,6 +472,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @HeavyKick.started += instance.OnHeavyKick;
             @HeavyKick.performed += instance.OnHeavyKick;
             @HeavyKick.canceled += instance.OnHeavyKick;
+            @Block.started += instance.OnBlock;
+            @Block.performed += instance.OnBlock;
+            @Block.canceled += instance.OnBlock;
         }
 
         private void UnregisterCallbacks(IPlayer1ActionMapActions instance)
@@ -457,6 +494,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @HeavyKick.started -= instance.OnHeavyKick;
             @HeavyKick.performed -= instance.OnHeavyKick;
             @HeavyKick.canceled -= instance.OnHeavyKick;
+            @Block.started -= instance.OnBlock;
+            @Block.performed -= instance.OnBlock;
+            @Block.canceled -= instance.OnBlock;
         }
 
         public void RemoveCallbacks(IPlayer1ActionMapActions instance)
@@ -481,5 +521,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnHeavyPunch(InputAction.CallbackContext context);
         void OnLightKick(InputAction.CallbackContext context);
         void OnHeavyKick(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
     }
 }
