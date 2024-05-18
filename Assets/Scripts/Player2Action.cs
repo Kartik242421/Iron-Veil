@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class Player1Action : MonoBehaviour
+public class Player2Action : MonoBehaviour
 {
     public float JumpSpeed = 20f;
-    public GameObject Player1;
+    public GameObject Player2;
     private Animator anim;
 
     private AnimatorStateInfo playerAnimatorState; // Animator state info
@@ -24,15 +24,11 @@ public class Player1Action : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         MyPlayer = GetComponent<AudioSource>();
-
     }
     void Update()
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
         HeavyPunchSlideDirection();
-        
-
-
     }
 
 
@@ -41,13 +37,13 @@ public class Player1Action : MonoBehaviour
         //Heavy Punch Slide
         if (HeavyMoving == true)
         {
-            if (Player1Move_New.FacingRightP1 == true)
+            if (Player2Move_New.FacingRightP2 == true)
             {
-                Player1.transform.Translate(PunchSlideAmt * Time.deltaTime, 0, 0);
+                Player2.transform.Translate(PunchSlideAmt * Time.deltaTime, 0, 0);
             }
-            if (Player1Move_New.FacingLeftP1 == true)
+            if (Player2Move_New.FacingLeftP2 == true)
             {
-                Player1.transform.Translate(-PunchSlideAmt * Time.deltaTime, 0, 0);
+                Player2.transform.Translate(-PunchSlideAmt * Time.deltaTime, 0, 0);
             }
 
         }
@@ -69,19 +65,19 @@ public class Player1Action : MonoBehaviour
     //predefined function for attacking & jumping:-
     public void JumpUp()
     {
-        Player1.transform.Translate(0, JumpSpeed , 0); 
+        Player2.transform.Translate(0, JumpSpeed , 0); 
     }
 
     public void FlipUp()
     {
-        Player1.transform.Translate(0, JumpSpeed , 0);
-        Player1.transform.Translate(1f , 0, 0);
+        Player2.transform.Translate(0, JumpSpeed , 0);
+        Player2.transform.Translate(1f , 0, 0);
     }
 
     public void FlipBack()
     {
-        Player1.transform.Translate(0, JumpSpeed , 0);
-        Player1.transform.Translate(-1f , 0, 0);
+        Player2.transform.Translate(0, JumpSpeed , 0);
+        Player2.transform.Translate(-1f , 0, 0);
     }
 
     //Sound:-

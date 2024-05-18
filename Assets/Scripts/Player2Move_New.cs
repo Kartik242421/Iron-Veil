@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player1Move_New : MonoBehaviour
+public class Player2Move_New : MonoBehaviour
 {
     public float speed = 1f;
     private Animator anim;
@@ -18,8 +18,8 @@ public class Player1Move_New : MonoBehaviour
     public GameObject Player1;
     public GameObject Opponent;
     private Vector3 OppPosition;
-    public static bool FacingLeftP1 = false;
-    public static bool FacingRightP1 = true;
+    public static bool FacingLeftP2 = false;
+    public static bool FacingRightP2 = true;
 
     //sound
     public AudioClip LightPunch;
@@ -204,10 +204,10 @@ public class Player1Move_New : MonoBehaviour
 
     IEnumerator FaceRight()
     {
-        if (FacingRightP1 == true)
+        if (FacingRightP2 == true)
         {
-            FacingRightP1 = false;
-            FacingLeftP1 = true;
+            FacingRightP2 = false;
+            FacingLeftP2 = true;
             yield return new WaitForSeconds(0.15f);
             Player1.transform.Rotate(0, 180, 0);
 
@@ -217,10 +217,10 @@ public class Player1Move_New : MonoBehaviour
     }
     IEnumerator FaceLeft()
     {
-        if (FacingLeftP1 == true)
+        if (FacingLeftP2 == true)
         {
-            FacingLeftP1 = false;
-            FacingRightP1 = true;
+            FacingLeftP2 = false;
+            FacingRightP2 = true;
             yield return new WaitForSeconds(0.15f);
             Player1.transform.Rotate(0, 180, 0);
             anim.SetLayerWeight(1, 0);
