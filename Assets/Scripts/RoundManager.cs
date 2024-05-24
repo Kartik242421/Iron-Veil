@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    ublic GameObject Round1Text;
+    public GameObject Round1Text;
     public GameObject Round2Text;
     public GameObject Round3Text;
     public GameObject FightText;
     public AudioSource MyPlayer;
-    public AudioSource MusicPlayer;
+   // public AudioSource MusicPlayer;
     public AudioClip FightAudio;
     public AudioClip Round1Audio;
     public AudioClip Round2Audio;
@@ -29,7 +29,7 @@ public class RoundManager : MonoBehaviour
     IEnumerator RoundSet()
     {
         yield return new WaitForSeconds(0.2f);
-        if (SaveScript.Round == 1)
+        if (SaveHealthData.Round == 1)
         {
             yield return new WaitForSeconds(0.4f);
             Round1Text.gameObject.SetActive(true);
@@ -43,11 +43,11 @@ public class RoundManager : MonoBehaviour
             MyPlayer.Play();
             yield return new WaitForSeconds(PauseTime);
             FightText.gameObject.SetActive(false);
-            MusicPlayer.Play();
-            SaveScript.TimeOut = false;
+           // MusicPlayer.Play();
+            SaveHealthData.TimeOut = false;
             this.gameObject.SetActive(false);
         }
-        if (SaveScript.Round == 2)
+        if (SaveHealthData.Round == 2)
         {
             yield return new WaitForSeconds(0.4f);
             Round2Text.gameObject.SetActive(true);
@@ -61,11 +61,11 @@ public class RoundManager : MonoBehaviour
             MyPlayer.Play();
             yield return new WaitForSeconds(PauseTime);
             FightText.gameObject.SetActive(false);
-            MusicPlayer.Play();
-            SaveScript.TimeOut = false;
+           // MusicPlayer.Play();
+            SaveHealthData.TimeOut = false;
             this.gameObject.SetActive(false);
         }
-        if (SaveScript.Round == 3)
+        if (SaveHealthData.Round == 3)
         {
             yield return new WaitForSeconds(0.4f);
             Round3Text.gameObject.SetActive(true);
@@ -79,8 +79,8 @@ public class RoundManager : MonoBehaviour
             MyPlayer.Play();
             yield return new WaitForSeconds(PauseTime);
             FightText.gameObject.SetActive(false);
-            MusicPlayer.Play();
-            SaveScript.TimeOut = false;
+           // MusicPlayer.Play();
+            SaveHealthData.TimeOut = false;
             this.gameObject.SetActive(false);
         }
 
