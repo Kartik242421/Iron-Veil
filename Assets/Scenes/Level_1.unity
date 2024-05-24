@@ -1334,10 +1334,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eve
       objectReference: {fileID: 0}
-    - target: {fileID: 3743631572081522623, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
-      propertyPath: JumpSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5962667704597796014, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.96

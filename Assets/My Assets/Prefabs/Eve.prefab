@@ -259,6 +259,30 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 75d8dc45-d18e-4db8-9a53-971600617376
     m_ActionName: Player1ActionMap/Block[/Keyboard/tab,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbfd3e44-ebf1-4c4f-ac51-e8e94936e840
+    m_ActionName: Player2ActionMap/Movement[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea6df237-a3db-453c-882e-4eebdaf20f4a
+    m_ActionName: Player2ActionMap/LightPunch[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: af9c20c3-fed2-41d2-9565-3070b54d3117
+    m_ActionName: Player2ActionMap/HeavyPunch[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 720574af-f16c-49e0-bfb4-770adca8036b
+    m_ActionName: Player2ActionMap/LightKick[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d41ee2c-4a71-4a7d-bc2e-c074a40ec64e
+    m_ActionName: Player2ActionMap/HeavyKick[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dbfbb6fd-ebc9-4d99-ac11-9005a2f10e76
+    m_ActionName: Player2ActionMap/Block[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1ActionMap
@@ -1297,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb82bbfc589711445965e01a71c934c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpSpeed: 1
+  JumpSpeed: 0.5
   Player1: {fileID: 446138653687177858}
   PunchSlideAmt: 2
   PunchWoosh: {fileID: 8300000, guid: f7bbbb1406cfef94b838e6a440cff6f6, type: 3}
