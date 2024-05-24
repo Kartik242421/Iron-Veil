@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 
 public class Player2Action : MonoBehaviour
 {
-    public float JumpSpeed = 20f;
+    public float JumpSpeed = 1f;
+    public float FlipSpeed = 0.8f;
+
     public GameObject Player2;
     private Animator anim;
 
@@ -70,14 +72,14 @@ public class Player2Action : MonoBehaviour
 
     public void FlipUp()
     {
-        Player2.transform.Translate(0, JumpSpeed , 0);
-        Player2.transform.Translate(1f , 0, 0);
+        Player2.transform.Translate(0, FlipSpeed , 0);
+        //Player2.transform.Translate(0.1f , 0, 0);
     }
 
     public void FlipBack()
     {
-        Player2.transform.Translate(0, JumpSpeed , 0);
-        Player2.transform.Translate(-1f , 0, 0);
+        Player2.transform.Translate(0, FlipSpeed , 0);
+        //Player2.transform.Translate(-0.1f , 0, 0);
     }
 
     //Sound:-
