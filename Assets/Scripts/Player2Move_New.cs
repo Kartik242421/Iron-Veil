@@ -233,6 +233,10 @@ public class Player2Move_New : MonoBehaviour
         {
             StartBlock();
         }
+        else
+        {
+            EndBlock();
+        }
     }
 
     //calling for animations:-

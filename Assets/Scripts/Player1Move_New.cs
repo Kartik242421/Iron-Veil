@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -232,6 +233,10 @@ public class Player1Move_New : MonoBehaviour
         if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
         {
             StartBlock();
+        }
+        else
+        {
+            EndBlock();
         }
     }
 
