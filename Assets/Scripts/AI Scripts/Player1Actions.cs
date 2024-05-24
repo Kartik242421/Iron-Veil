@@ -1,190 +1,163 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class Player1Actions : MonoBehaviour
 {
-    public float JumpSpeed = 1.0f;
+    public float JumpSpeed = 20f;
     public GameObject Player1;
-    private Animator Anim;
-    private AnimatorStateInfo Player1Layer0;
-    private bool HeavyMoving = false;
-    private bool HeavyReact = false;
+    private Animator anim;
+
+    private AnimatorStateInfo playerAnimatorState; // Animator state info
+
     public float PunchSlideAmt = 2f;
-    public float HeavyReactAmt = 4f;
+    private bool HeavyMoving = false;
+    public static bool Hits = false;
+    //audio
     private AudioSource MyPlayer;
     public AudioClip PunchWoosh;
     public AudioClip KickWoosh;
-    public static bool Hits = false;
-    public static bool FlyingJumpP1 = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         MyPlayer = GetComponent<AudioSource>();
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        if (SaveHealthData.TimeOut == false)
-        {
-            //Heavy Punch Slide
-            if (HeavyMoving == true)
-            {
-                if (Player1Move_New.FacingRight == true)
-                {
-                    Player1.transform.Translate(PunchSlideAmt * Time.deltaTime, 0, 0);
-                }
-                if (Player1Move_New.FacingLeft == true)
-                {
-                    Player1.transform.Translate(-PunchSlideAmt * Time.deltaTime, 0, 0);
-                }
-            }
-
-            //Heavy React Slide
-            if (HeavyReact == true)
-            {
-                if (Player1Move_New.FacingRight == true)
-                {
-                    Player1.transform.Translate(-HeavyReactAmt * Time.deltaTime, 0, 0);
-                }
-                if (Player1Move_New.FacingLeft == true)
-                {
-                    Player1.transform.Translate(HeavyReactAmt * Time.deltaTime, 0, 0);
-                }
-            }
-
-            //Listen to the Animator
-            Player1Layer0 = Anim.GetCurrentAnimatorStateInfo(0);
-
-            //Standing attacks
-            if (Player1Layer0.IsTag("Motion") || Player1Layer0.IsTag("Block"))
-            {
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    Anim.SetTrigger("LightPunch");
-                    Anim.SetTrigger("BlockOff");
-                    Hits = false;
-                }
-                if (Input.GetButtonDown("Fire2"))
-                {
-                    Anim.SetTrigger("HeavyPunch");
-                    Anim.SetTrigger("BlockOff");
-                    Hits = false;
-                }
-                if (Input.GetButtonDown("Fire3"))
-                {
-                    Anim.SetTrigger("LightKick");
-                    Anim.SetTrigger("BlockOff");
-                    Hits = false;
-                }
-                if (Input.GetButtonDown("Jump"))
-                {
-                    Anim.SetTrigger("HeavyKick");
-                    Anim.SetTrigger("BlockOff");
-                    Hits = false;
-                }
-                if (Input.GetButtonDown("Block"))
-                {
-                    Anim.SetTrigger("BlockOn");
-                }
-            }
-
-            if (Player1Layer0.IsTag("Block"))
-            {
-                if (Input.GetButtonUp("Block"))
-                {
-                    Anim.SetTrigger("BlockOff");
-                }
-            }
+        playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
+        HeavyPunchSlideDirection();
 
 
-            //Crouching attack
-            if (Player1Layer0.IsTag("Crouching"))
-            {
-                if (Input.GetButtonDown("Fire3"))
-                {
-                    Anim.SetTrigger("LightKick");
-                    Hits = false;
-                }
-            }
 
-            //Aerial moves
-            if (Player1Layer0.IsTag("Jumping"))
-            {
-                if (Input.GetButtonDown("Jump"))
-                {
-                    Anim.SetTrigger("HeavyKick");
-                    Hits = false;
-                }
-            }
-        }
     }
 
-    public void JumpUp()
+
+    public void HeavyPunchSlideDirection()
     {
-        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
+        //Heavy Punch Slide
+        if (HeavyMoving == true)
+        {
+            if (Player1Move_New.FacingRightP1 == true)
+            {
+                Player1.transform.Translate(PunchSlideAmt * Time.deltaTime, 0, 0);
+            }
+            if (Player1Move_New.FacingLeftP1 == true)
+            {
+                Player1.transform.Translate(-PunchSlideAmt * Time.deltaTime, 0, 0);
+            }
+
+        }
     }
     public void HeavyMove()
     {
         StartCoroutine(PunchSlide());
+        //Player1.transform.Translate(0, 0, 0);
+
     }
-    public void HeavyReaction()
+    IEnumerator PunchSlide()
     {
-        StartCoroutine(HeavySlide());
+        HeavyMoving = true;
+        yield return new WaitForSeconds(0.05f);
+        HeavyMoving = false;
     }
+
+
+    //predefined function for attacking & jumping:-
+    public void JumpUp()
+    {
+        Player1.transform.Translate(0, JumpSpeed, 0);
+    }
+
     public void FlipUp()
     {
-        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
-        FlyingJumpP1 = true;
+        Player1.transform.Translate(0, JumpSpeed, 0);
+        Player1.transform.Translate(1f, 0, 0);
     }
+
     public void FlipBack()
     {
-        Player1.transform.Translate(0, JumpSpeed * Time.deltaTime, 0);
-        FlyingJumpP1 = true;
+        Player1.transform.Translate(0, JumpSpeed, 0);
+        Player1.transform.Translate(-1f, 0, 0);
     }
 
-    public void IdleSpeed()
+    //Sound:-
+    public void PunchWooshSound()
     {
-        FlyingJumpP1 = false;
+        MyPlayer.clip = PunchWoosh;
+        MyPlayer.Play();
     }
-
-    public void ResetTime()
-    {
-        Time.timeScale = 1.0f;
-    }
-
-
     public void KickWooshSound()
     {
         MyPlayer.clip = KickWoosh;
         MyPlayer.Play();
     }
 
-    public void PunchWooshSound()
+    //calling for input:-
+    public void OnLightPunchEvent(InputAction.CallbackContext ctx)
     {
-        MyPlayer.clip = PunchWoosh;
-        MyPlayer.Play();
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            LightPunch();
+        }
     }
 
-    public void RandomAttack()
+    public void OnHeavyPunchEvent(InputAction.CallbackContext ctx)
     {
-
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            HeavyPunch();
+        }
+    }
+    public void OnLightKickEvent(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            LightKick();
+        }
+    }
+    public void OnHeavyKickEvent(InputAction.CallbackContext ctx)
+    {
+        if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
+        {
+            HeavyKick();
+        }
     }
 
-    IEnumerator PunchSlide()
+    //calling for animations:-
+    void LightPunch()
     {
-        HeavyMoving = true;
-        yield return new WaitForSeconds(0.1f);
-        HeavyMoving = false;
+        if (playerAnimatorState.IsTag("Motion"))
+        {
+            anim.SetTrigger("LightPunch");
+        }
     }
 
-    IEnumerator HeavySlide()
+    void HeavyPunch()
     {
-        HeavyReact = true;
-        yield return new WaitForSeconds(0.3f);
-        HeavyReact = false;
+        if (playerAnimatorState.IsTag("Motion"))
+        {
+            anim.SetTrigger("HeavyPunch");
+        }
     }
+
+    void LightKick()
+    {
+        if (playerAnimatorState.IsTag("Motion") || playerAnimatorState.IsTag("Crouching"))
+        {
+            anim.SetTrigger("LightKick");
+        }
+    }
+    void HeavyKick()
+    {
+        if (playerAnimatorState.IsTag("Motion") || playerAnimatorState.IsTag("Jumping"))
+        {
+            anim.SetTrigger("HeavyKick");
+        }
+    }
+
+
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,8 +19,8 @@ public class Player1Move_New : MonoBehaviour
     public GameObject Player1;
     public GameObject Opponent;
     private Vector3 OppPosition;
-    public static bool FacingLeft = false;
-    public static bool FacingRight = true;
+    public static bool FacingLeftP1 = false;
+    public static bool FacingRightP1 = true;
 
     //sound
     public AudioClip LightPunch;
@@ -57,7 +58,7 @@ public class Player1Move_New : MonoBehaviour
     void Update()
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
-        
+
         if (canMove)
         {
             Move();
@@ -97,16 +98,16 @@ public class Player1Move_New : MonoBehaviour
         }
     }
 
-    public void OnMovementEvent (InputAction.CallbackContext ctx)
+    public void OnMovementEvent(InputAction.CallbackContext ctx)
     {
         movementInput = ctx.ReadValue<Vector2>();
     }
 
-   
+
 
     void Move()
     {
-        
+
         if (!isJumping && playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
         {
             float horizontalInput = movementInput.x;
@@ -204,10 +205,10 @@ public class Player1Move_New : MonoBehaviour
 
     IEnumerator FaceRight()
     {
-        if (FacingRight == true)
+        if (FacingRightP1 == true)
         {
-            FacingRight = false;
-            FacingLeft = true;
+            FacingRightP1 = false;
+            FacingLeftP1 = true;
             yield return new WaitForSeconds(0.15f);
             Player1.transform.Rotate(0, 180, 0);
 
@@ -217,10 +218,10 @@ public class Player1Move_New : MonoBehaviour
     }
     IEnumerator FaceLeft()
     {
-        if (FacingLeft == true)
+        if (FacingLeftP1 == true)
         {
-            FacingLeft = false;
-            FacingRight = true;
+            FacingLeftP1 = false;
+            FacingRightP1 = true;
             yield return new WaitForSeconds(0.15f);
             Player1.transform.Rotate(0, 180, 0);
             anim.SetLayerWeight(1, 0);
@@ -232,6 +233,10 @@ public class Player1Move_New : MonoBehaviour
         if (ctx.ReadValue<float>() > 0.5f) // Check if button is pressed (float value > 0.5)
         {
             StartBlock();
+        }
+        else
+        {
+            EndBlock();
         }
     }
 
