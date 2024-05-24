@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private int PlayerSceneIndex = 3;
-    [SerializeField] private int optionScreenSceneIndex = 3;
-    [SerializeField] private int controlsScreenSceneIndex = 2;
+    public int PlayerSceneIndex = 3;
+    public int optionScreenSceneIndex = 3;
+    public int controlsScreenSceneIndex = 2;
+    public int mainmenuIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +48,9 @@ public class MainMenu : MonoBehaviour
     public void ControlsScreen()
     {
         SceneManager.LoadScene(controlsScreenSceneIndex);
+    }
+    public void MainMenuScene()
+    {
+        SceneManager.LoadScene(mainmenuIndex);
     }
 }
