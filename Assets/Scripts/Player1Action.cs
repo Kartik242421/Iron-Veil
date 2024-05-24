@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 
 public class Player1Action : MonoBehaviour
 {
-    public float JumpSpeed = 20f;
+    public float JumpSpeed = 1f;
+    public float FlipSpeed = 0.8f;
+
     public GameObject Player1;
     private Animator anim;
 
@@ -69,19 +71,19 @@ public class Player1Action : MonoBehaviour
     //predefined function for attacking & jumping:-
     public void JumpUp()
     {
-        Player1.transform.Translate(0, JumpSpeed , 0); 
+        Player1.transform.Translate(0, JumpSpeed, 0);
     }
 
     public void FlipUp()
     {
-        Player1.transform.Translate(0, JumpSpeed , 0);
-        Player1.transform.Translate(1f , 0, 0);
+        Player1.transform.Translate(0, FlipSpeed, 0);
+        //Player2.transform.Translate(0.1f , 0, 0);
     }
 
     public void FlipBack()
     {
-        Player1.transform.Translate(0, JumpSpeed , 0);
-        Player1.transform.Translate(-1f , 0, 0);
+        Player1.transform.Translate(0, FlipSpeed, 0);
+        //Player2.transform.Translate(-0.1f , 0, 0);
     }
 
     //Sound:-
