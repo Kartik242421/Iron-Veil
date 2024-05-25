@@ -31,7 +31,6 @@ public class MainMenu : MonoBehaviour
 
     public void TwoPlayer()
     {
-        SaveHealthData.Player1Mode = false;
         SceneManager.LoadScene(PlayerSceneIndex);
     }
 
