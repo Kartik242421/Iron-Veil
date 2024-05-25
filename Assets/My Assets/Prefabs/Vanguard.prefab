@@ -285,9 +285,10 @@ GameObject:
   - component: {fileID: 6460879699896771412}
   - component: {fileID: 4691341116277979977}
   - component: {fileID: 2252589117728564028}
+  - component: {fileID: 6710216707896805146}
   m_Layer: 0
   m_Name: Vanguard
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,6 +583,27 @@ MonoBehaviour:
   HeavyKick: {fileID: 8300000, guid: baa3e98529e8d094b8e0c35daf8d4dd7, type: 3}
   blockAction: {fileID: 4619516754319336643, guid: 43888cf83fce5b34fbef2272c05bca6b, type: 3}
   Restrict: {fileID: 798906631605741670}
+--- !u!65 &6710216707896805146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394602882345746310}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 2.0000002, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6395108215818856869
 GameObject:
   m_ObjectHideFlags: 0

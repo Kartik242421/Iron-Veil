@@ -13,14 +13,17 @@ public class Player2Action : MonoBehaviour
     private Animator anim;
 
     private AnimatorStateInfo playerAnimatorState; // Animator state info
-
-    public float PunchSlideAmt = 2f;
     private bool HeavyMoving = false;
+    private bool HeavyReact = false;
+    public float PunchSlideAmt = 2f;
+    public float HeavyReactAmt = 4f;
     
     //audio
     private AudioSource MyPlayer;
     public AudioClip PunchWoosh;
-    public AudioClip KickWoosh; 
+    public AudioClip KickWoosh;
+
+    public static bool HitsP2 = false;
 
     void Start()
     {
@@ -31,6 +34,7 @@ public class Player2Action : MonoBehaviour
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
         HeavyPunchSlideDirection();
+        HeavyReactSlideDirection();
     }
 
 
@@ -50,17 +54,45 @@ public class Player2Action : MonoBehaviour
 
         }
     }
+    public void HeavyReactSlideDirection()
+    {
+        //Heavy React Slide
+        if (HeavyReact == true)
+        {
+            if (Player2Move_New.FacingRightP2 == true)
+            {
+                Player2.transform.Translate(-HeavyReactAmt * Time.deltaTime, 0, 0);
+            }
+            if (Player2Move_New.FacingLeftP2 == true)
+            {
+                Player2.transform.Translate(+HeavyReactAmt * Time.deltaTime, 0, 0);
+            }
+
+        }
+    }
     public void HeavyMove()
     {
         StartCoroutine(PunchSlide());
         //Player1.transform.Translate(0, 0, 0);
-
     }
+
+    public void HeavyReaction()
+    {
+        StartCoroutine(HeavySlide());
+    }
+
     IEnumerator PunchSlide()
     {
         HeavyMoving = true;
         yield return new WaitForSeconds(0.05f);
         HeavyMoving = false;
+    }
+
+    IEnumerator HeavySlide()
+    {
+        HeavyReact = true;
+        yield return new WaitForSeconds(0.3f);
+        HeavyReact = false;
     }
 
 
@@ -131,6 +163,7 @@ public class Player2Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion"))
         {
             anim.SetTrigger("LightPunch");
+            HitsP2 = false;
         }
     }
 
@@ -139,6 +172,7 @@ public class Player2Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion"))
         {
             anim.SetTrigger("HeavyPunch");
+            HitsP2 = false;
         }
     }
 
@@ -147,6 +181,7 @@ public class Player2Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion") || playerAnimatorState.IsTag("Crouching"))
         {
             anim.SetTrigger("LightKick");
+            HitsP2 = false;
         }
     }
     void HeavyKick()
@@ -154,6 +189,7 @@ public class Player2Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion") || playerAnimatorState.IsTag("Jumping"))
         {
             anim.SetTrigger("HeavyKick");
+            HitsP2 = false;
         }
     }
 

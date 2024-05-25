@@ -14,6 +14,8 @@ TagManager:
   - P1Right
   - P2Left
   - P2Right
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX

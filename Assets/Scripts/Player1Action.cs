@@ -20,7 +20,9 @@ public class Player1Action : MonoBehaviour
     //audio
     private AudioSource MyPlayer;
     public AudioClip PunchWoosh;
-    public AudioClip KickWoosh; 
+    public AudioClip KickWoosh;
+
+    public static bool Hits = false;
 
     void Start()
     {
@@ -32,9 +34,6 @@ public class Player1Action : MonoBehaviour
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
         HeavyPunchSlideDirection();
-        
-
-
     }
 
 
@@ -135,6 +134,7 @@ public class Player1Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion"))
         {
             anim.SetTrigger("LightPunch");
+            Hits = false;
         }
     }
 
@@ -143,6 +143,8 @@ public class Player1Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion"))
         {
             anim.SetTrigger("HeavyPunch");
+            Hits = false;
+
         }
     }
 
@@ -151,6 +153,8 @@ public class Player1Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion") || playerAnimatorState.IsTag("Crouching"))
         {
             anim.SetTrigger("LightKick");
+            Hits = false;
+
         }
     }
     void HeavyKick()
@@ -158,6 +162,8 @@ public class Player1Action : MonoBehaviour
         if (playerAnimatorState.IsTag("Motion") || playerAnimatorState.IsTag("Jumping"))
         {
             anim.SetTrigger("HeavyKick");
+            Hits = false;
+
         }
     }
 

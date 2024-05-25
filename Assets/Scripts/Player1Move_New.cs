@@ -81,7 +81,7 @@ public class Player1Move_New : MonoBehaviour
         }
     }
 
-    //reaction
+    //reaction+ Sounds
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("FistLight"))
