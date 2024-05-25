@@ -215,6 +215,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &155400594 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6600483658154802513, guid: 2b35dcc023622a04d9bb25d1cf21ee41, type: 3}
+  m_PrefabInstance: {fileID: 915371991928187972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &159416770
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +731,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334217727}
   m_CullTransparentMesh: 1
+--- !u!4 &775300922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2933354683402331026, guid: 928f42ee35373194e9ef128d3c35ae2d, type: 3}
+  m_PrefabInstance: {fileID: 5822164048539105542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &807681282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2132,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 2082209535}
   LoadingScreen: {fileID: 334217727}
+  playerPrefab: {fileID: 3041359214851968607, guid: 659ab7f3ba2e2a44aa619da3ada35906, type: 3}
+  spawnPoints:
+  - {fileID: 155400594}
+  - {fileID: 775300922}
+  joinCodeInputField: {fileID: 0}
 --- !u!1001 &915371991928187972
 PrefabInstance:
   m_ObjectHideFlags: 0
