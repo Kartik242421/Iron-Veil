@@ -326,6 +326,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Eve
       objectReference: {fileID: 0}
+    - target: {fileID: 6874833963274933023, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -751.0108
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874833963274933023, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 375.50534
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1789,7 +1797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884505608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a57762e66b66584a855fd4a6d9718d8, type: 3}
   m_Name: 
@@ -2393,6 +2401,10 @@ PrefabInstance:
     - target: {fileID: 4298246095301438215, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
       propertyPath: m_Name
       value: Canvas_Controlls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298246095301438215, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5606882297484476233, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
       propertyPath: m_ControlPath
@@ -3834,13 +3846,13 @@ SceneRoots:
   m_Roots:
   - {fileID: 333648988}
   - {fileID: 1986491274}
+  - {fileID: 258804494}
   - {fileID: 2398942402033394735}
   - {fileID: 2653315444621094371}
   - {fileID: 708806175}
   - {fileID: 6692399748658905154}
   - {fileID: 1044058049}
   - {fileID: 793637524}
-  - {fileID: 258804494}
   - {fileID: 1674696667}
   - {fileID: 650069995}
   - {fileID: 1073153519}
