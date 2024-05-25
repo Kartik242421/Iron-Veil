@@ -82,7 +82,7 @@ public class CPUSelect : MonoBehaviour
                 CharacterSelectionP2 = "MariaP2";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 2)
+            if (IconNumber == 6)
             {
                 SwitchOff();
                 ElyP2.gameObject.SetActive(true);
@@ -100,7 +100,7 @@ public class CPUSelect : MonoBehaviour
                 CharacterSelectionP2 = "SynthP2";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 6)
+            if (IconNumber == 2)
             {
                 SwitchOff();
                 VanguardP2.gameObject.SetActive(true);
