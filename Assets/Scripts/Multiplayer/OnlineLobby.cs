@@ -39,8 +39,12 @@ public class OnlineLobby : MonoBehaviour
         LoadingScreen.SetActive(true);
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(2, "asia-south1");
         string joincode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-        Debug.Log($"Allocation created {allocation.AllocationId},{allocation.Region}, {joincode}");
+        Debug.Log($"Allocation created {allocation.AllocationId},{allocation.Region}");
         LoadingScreen.SetActive(false);
+        Canvas.SetActive(false);
+
+        // Spawn host player after server is created
+        SpawnPlayer();
     }
 
     public async void JoinAsClient(TMPro.TMP_InputField joincode)
@@ -51,7 +55,7 @@ public class OnlineLobby : MonoBehaviour
         LoadingScreen.SetActive(false);
         Canvas.SetActive(false);
 
-        // Spawn player capsule after joining the server
+        // Spawn joining player after successful connection to server
         SpawnPlayer();
     }
 
