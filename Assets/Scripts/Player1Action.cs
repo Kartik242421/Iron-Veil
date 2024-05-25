@@ -13,10 +13,12 @@ public class Player1Action : MonoBehaviour
     private Animator anim;
 
     private AnimatorStateInfo playerAnimatorState; // Animator state info
+    private bool HeavyMoving = false;
+    private bool HeavyReact = false;
 
     public float PunchSlideAmt = 2f;
-    private bool HeavyMoving = false;
-    
+    public float HeavyReactAmt = 4f;
+
     //audio
     private AudioSource MyPlayer;
     public AudioClip PunchWoosh;
@@ -34,6 +36,7 @@ public class Player1Action : MonoBehaviour
     {
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
         HeavyPunchSlideDirection();
+        HeavyReactSlideDirection();
     }
 
 
@@ -53,17 +56,42 @@ public class Player1Action : MonoBehaviour
 
         }
     }
+    public void HeavyReactSlideDirection()
+    {
+        //Heavy React Slide
+        if (HeavyReact == true)
+        {
+            if (Player1Move_New.FacingRightP1 == true)
+            {
+                Player1.transform.Translate(-HeavyReactAmt * Time.deltaTime, 0, 0);
+            }
+            if (Player1Move_New.FacingLeftP1 == true)
+            {
+                Player1.transform.Translate(+HeavyReactAmt * Time.deltaTime, 0, 0);
+            }
+
+        }
+    }
     public void HeavyMove()
     {
         StartCoroutine(PunchSlide());
         //Player1.transform.Translate(0, 0, 0);
-
+    }
+    public void HeavyReaction()
+    {
+        StartCoroutine(HeavySlide());
     }
     IEnumerator PunchSlide()
     {
         HeavyMoving = true;
         yield return new WaitForSeconds(0.05f);
         HeavyMoving = false;
+    }
+    IEnumerator HeavySlide()
+    {
+        HeavyReact = true;
+        yield return new WaitForSeconds(0.3f);
+        HeavyReact = false;
     }
 
 
