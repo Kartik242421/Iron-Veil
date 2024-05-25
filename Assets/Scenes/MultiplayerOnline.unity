@@ -209,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 45025824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: -10}
+  m_LocalPosition: {x: 0, y: 1.54, z: -14.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 0.58805025, b: 0.58805025, a: 0.6431373}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2122,10 +2122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Canvas: {fileID: 2082209535}
   LoadingScreen: {fileID: 334217727}
-  playerPrefab: {fileID: 3041359214851968607, guid: 659ab7f3ba2e2a44aa619da3ada35906, type: 3}
-  spawnPoints:
-  - {fileID: 6600483658154802513, guid: 2b35dcc023622a04d9bb25d1cf21ee41, type: 3}
-  - {fileID: 2933354683402331026, guid: 928f42ee35373194e9ef128d3c35ae2d, type: 3}
 --- !u!1001 &915371991928187972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2144,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6600483658154802513, guid: 2b35dcc023622a04d9bb25d1cf21ee41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 6600483658154802513, guid: 2b35dcc023622a04d9bb25d1cf21ee41, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2197,7 +2193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933354683402331026, guid: 928f42ee35373194e9ef128d3c35ae2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 2933354683402331026, guid: 928f42ee35373194e9ef128d3c35ae2d, type: 3}
       propertyPath: m_LocalPosition.z
