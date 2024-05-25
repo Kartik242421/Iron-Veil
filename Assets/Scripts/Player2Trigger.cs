@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player2Trigger : MonoBehaviour
 {
     public Collider col;
-    //public float damageAmt = 0.1f;
+    public float damageAmt = 0.1f;
     //Update is called once per frame
     void Update()
     {
@@ -25,11 +25,11 @@ public class Player2Trigger : MonoBehaviour
         {
             col.enabled = true;
             Player2Action.HitsP2 = true;
-            /*SaveHealthData.player1health -= damageAmt;
-            if (SaveHealthData.player1Timer < 2.0f)
+            SaveHealthData.Player1Health -= damageAmt;
+            if (SaveHealthData.Player1Timer < 2.0f)
             {
-                SaveHealthData.player1Timer += 2.0f;
-            }*/
+                SaveHealthData.Player1Timer += 2.0f;
+            }
 
         }
 
