@@ -12,6 +12,10 @@ public class HealthBar : MonoBehaviour
     public Image Player2Green;
     public Image Player1Red;
     public Image Player2Red;
+    public Image P1Win1;
+    public Image P1Win2;
+    public Image P2Win1;
+    public Image P2Win2;
     public TextMeshProUGUI TimerText;
     public float LevelTime = 90;
     public GameObject WinCondition;
@@ -19,7 +23,28 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1.0f;
+        SaveHealthData.Round++;
+        SaveHealthData.TimeOut = true;
+        if (SaveHealthData.Player1Wins == 1)
+        {
+            P1Win1.gameObject.SetActive(true);
+        }
+        if (SaveHealthData.Player1Wins == 2)
+        {
+            P1Win1.gameObject.SetActive(true);
+            P1Win2.gameObject.SetActive(true);
+        }
+        if (SaveHealthData.Player2Wins == 1)
+        {
+            P2Win1.gameObject.SetActive(true);
+        }
+        if (SaveHealthData.Player2Wins == 2)
+        {
+            P2Win1.gameObject.SetActive(true);
+            P2Win2.gameObject.SetActive(true);
+        }
+
     }
 
     // Update is called once per frame
