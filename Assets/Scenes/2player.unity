@@ -526,13 +526,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OnlineLobby, Assembly-CSharp
-        m_MethodName: JoinAsClient
-        m_Mode: 2
+      - m_Target: {fileID: 2082209540}
+        m_TargetAssemblyTypeName: MultiplayerScript, Assembly-CSharp
+        m_MethodName: TwoPlayerOffline
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TMP_InputField, Unity.TextMeshPro
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -646,7 +646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Back
 --- !u!222 &1366091714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -964,13 +964,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2082209535}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2082209540}
+        m_TargetAssemblyTypeName: MultiplayerScript, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1282,9 +1282,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OnlineLobby, Assembly-CSharp
-        m_MethodName: StartAsHost
+      - m_Target: {fileID: 2082209540}
+        m_TargetAssemblyTypeName: MultiplayerScript, Assembly-CSharp
+        m_MethodName: TwoPlayerOnline
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5048bac7dc5d6e0428d8e1e105967b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerSceneIndex: 0
+  PlayerSceneIndex: 5
   OnlineSceneIndex: 6
   MainSceneIndex: 0
 --- !u!1660057539 &9223372036854775807

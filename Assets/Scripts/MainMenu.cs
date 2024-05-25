@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public int PlayerSceneIndex = 3;
+    public int Player2SceneIndex;
     public int optionScreenSceneIndex = 3;
     public int controlsScreenSceneIndex = 2;
     public int mainmenuIndex;
@@ -32,7 +33,7 @@ public class MainMenu : MonoBehaviour
     public void TwoPlayer()
     {
         SaveHealthData.Player1Mode = false;
-        SceneManager.LoadScene(PlayerSceneIndex);
+        SceneManager.LoadScene(Player2SceneIndex);
     }
 
     public void OptionScreen()

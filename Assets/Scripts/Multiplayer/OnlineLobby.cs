@@ -6,6 +6,8 @@ using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using TMPro; // Make sure to include TMPro namespace
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class OnlineLobby : MonoBehaviour
 {
@@ -97,6 +99,10 @@ public class OnlineLobby : MonoBehaviour
         {
             Debug.LogError("Player prefab or spawn points not assigned or empty.");
         }
+    }
+    public void exit()
+    {
+        SceneManager.LoadScene(7);
     }
 
     // Update is called once per frame

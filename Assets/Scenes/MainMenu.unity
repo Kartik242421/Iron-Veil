@@ -927,8 +927,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSceneIndex: 5
+  Player2SceneIndex: 7
   optionScreenSceneIndex: 2
   controlsScreenSceneIndex: 1
+  mainmenuIndex: 0
 --- !u!1 &1482135401
 GameObject:
   m_ObjectHideFlags: 0

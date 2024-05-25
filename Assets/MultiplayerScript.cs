@@ -26,7 +26,7 @@ public class MultiplayerScript : MonoBehaviour
     }
     public void TwoPlayerOnline()
     {
-        SceneManager.LoadScene(PlayerSceneIndex);
+        SceneManager.LoadScene(OnlineSceneIndex);
     }
     public void Exit()
     {
