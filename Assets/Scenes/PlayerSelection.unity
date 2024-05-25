@@ -4478,9 +4478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ae5692fa6fb7c4284a60bf7424f6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxIcons: 6
-  IconsPerRow: 3
-  MaxRows: 2
+  MaxIcons: 2
+  IconsPerRow: 2
+  MaxRows: 1
   EveP2: {fileID: 1718798861}
   MorakP2: {fileID: 2112652020}
   MariaP2: {fileID: 1448216181229837870}
@@ -4509,9 +4509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f60e5e4ab14e7e42a6d53b05f720a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxIcons: 6
-  IconsPerRow: 3
-  MaxRows: 2
+  MaxIcons: 2
+  IconsPerRow: 2
+  MaxRows: 1
   EveP2: {fileID: 1718798861}
   MorakP2: {fileID: 2112652020}
   MariaP2: {fileID: 1448216181229837870}
@@ -14899,7 +14899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1267816478
 RectTransform:
   m_ObjectHideFlags: 0
