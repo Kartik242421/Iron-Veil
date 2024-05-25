@@ -2410,6 +2410,18 @@ PrefabInstance:
       propertyPath: m_ControlPath
       value: <Gamepad>/buttonNorth
       objectReference: {fileID: 0}
+    - target: {fileID: 6361403164837372096, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361403164837372096, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361403164837372096, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7858251243140369375, guid: 5810b7a53bf73d24fa09256425794d3e, type: 3}
       propertyPath: m_ControlPath
       value: <Gamepad>/rightTrigger
@@ -2464,7 +2476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446138653687177858, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 487749522046171750, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3518,7 +3530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5394602882345746310, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5806986792578258706, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

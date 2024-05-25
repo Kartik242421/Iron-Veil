@@ -23,5 +23,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerSelection.unity
     guid: b7d9ef8ce0af9fd4595dbe590bb8e349
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerOnline.unity
+    guid: 191a6c77388deee49aba9bbc7c7a8129
+  - enabled: 1
+    path: Assets/Scenes/2player.unity
+    guid: 469fe24ef7ef13f4cbc2703c342a2835
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d8459815e80a86043b0d3b53a434eea8, type: 2}
