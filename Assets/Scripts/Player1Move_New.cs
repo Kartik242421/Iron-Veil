@@ -38,6 +38,10 @@ public class Player1Move_New : MonoBehaviour
 
     public GameObject Restrict;
 
+    public Rigidbody RB;
+    public Collider BoxCollider;
+    public Collider CapsuleCollider;
+
     void Awake()
     {
         blockAction.action.performed += ctx => OnBlockEvent(ctx); // Subscribe to the block action
@@ -62,6 +66,9 @@ public class Player1Move_New : MonoBehaviour
 
     void Update()
     {
+        //check if we are knocked out
+        CheckKnockedOut();
+
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
         
         if (canMove)
@@ -78,6 +85,41 @@ public class Player1Move_New : MonoBehaviour
         {
             WalkLeftP1 = true;
             WalkRightP1 = true;
+        }
+        ColliderOnOff();
+        
+    }
+
+    void ColliderOnOff()
+    {
+        if (playerAnimatorState.IsTag("Block"))
+        {
+            RB.isKinematic = true;
+            BoxCollider.enabled = false;
+            CapsuleCollider.enabled = false;
+        }
+        else
+        {
+            BoxCollider.enabled = true;
+            CapsuleCollider.enabled = true;
+            RB.isKinematic = false;
+        }
+    }
+
+    void CheckKnockedOut()
+    {
+        if (SaveHealthData.Player1Health <= 0)
+        {
+            anim.SetTrigger("KnockOut");
+            Player1.GetComponent<Player1Action>().enabled = false;
+            StartCoroutine(KnockedOut());
+            //this.GetComponent<Player1Move_New>().enabled = false;
+        }
+        if (SaveHealthData.Player2Health <= 0)
+        {
+            anim.SetTrigger("Victory");
+            Player1.GetComponent<Player1Action>().enabled = false;
+            this.GetComponent<Player1Move_New>().enabled = false;
         }
     }
 
@@ -269,5 +311,11 @@ public class Player1Move_New : MonoBehaviour
     {
         // End blocking animation or any other actions related to ending block
         anim.SetTrigger("BlockOff");
+    }
+
+    IEnumerator KnockedOut()
+    {
+        yield return new WaitForSeconds(0.1f);
+        this.GetComponent<Player1Move_New>().enabled = false;
     }
 }

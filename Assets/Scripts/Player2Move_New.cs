@@ -37,6 +37,10 @@ public class Player2Move_New : MonoBehaviour
 
     public GameObject Restrict;
 
+    public Rigidbody RB;
+    public Collider BoxCollider;
+    public Collider CapsuleCollider;
+
     void Awake()
     {
         blockAction.action.performed += ctx => OnBlockEvent(ctx); // Subscribe to the block action
@@ -61,6 +65,7 @@ public class Player2Move_New : MonoBehaviour
 
     void Update()
     {
+        CheckKnockedOut();
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
         
         if (canMove)
@@ -78,7 +83,41 @@ public class Player2Move_New : MonoBehaviour
             WalkLeft = true;
             WalkRight = true;
         }
+        ColliderOnOff();
     }
+
+    void ColliderOnOff()
+    {
+        if (playerAnimatorState.IsTag("Block"))
+        {
+            RB.isKinematic = true;
+            BoxCollider.enabled = false;
+            CapsuleCollider.enabled = false;
+        }
+        else
+        {
+            BoxCollider.enabled = true;
+            CapsuleCollider.enabled = true;
+            RB.isKinematic = false;
+        }
+    }
+
+    void CheckKnockedOut()
+    {
+        if (SaveHealthData.Player2Health <= 0)
+        {
+            anim.SetTrigger("KnockOut");
+            Player1.GetComponent<Player2Action>().enabled = false;
+            StartCoroutine(KnockedOut());
+        }
+        if (SaveHealthData.Player1Health <= 0)
+        {
+            anim.SetTrigger("Victory");
+            Player1.GetComponent<Player2Action>().enabled = false;
+            this.GetComponent<Player2Move_New>().enabled = false;
+        }
+    }
+
 
     //reaction
     private void OnTriggerEnter(Collider other)
@@ -268,5 +307,10 @@ public class Player2Move_New : MonoBehaviour
     {
         // End blocking animation or any other actions related to ending block
         anim.SetTrigger("BlockOff");
+    }
+    IEnumerator KnockedOut()
+    {
+        yield return new WaitForSeconds(0.1f);
+        this.GetComponent<Player2Move_New>().enabled = false;
     }
 }
