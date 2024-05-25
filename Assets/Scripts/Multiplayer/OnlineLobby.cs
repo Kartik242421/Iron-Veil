@@ -39,7 +39,7 @@ public class OnlineLobby : MonoBehaviour
         LoadingScreen.SetActive(true);
         Allocation allocation = await RelayService.Instance.CreateAllocationAsync(2, "asia-south1");
         string joincode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-        Debug.Log($"Allocation created {allocation.AllocationId},{allocation.Region}");
+        Debug.Log($"Allocation created {allocation.AllocationId},{allocation.Region}, {joincode}");
         LoadingScreen.SetActive(false);
         Canvas.SetActive(false);
 
@@ -51,7 +51,7 @@ public class OnlineLobby : MonoBehaviour
     {
         LoadingScreen.SetActive(true);
         JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joincode.text);
-        Debug.Log($"Allocation Joined {allocation.AllocationId}, {allocation.Region}, {joincode}");
+        Debug.Log($"Allocation Joined {allocation.AllocationId}, {allocation.Region}");
         LoadingScreen.SetActive(false);
         Canvas.SetActive(false);
 
