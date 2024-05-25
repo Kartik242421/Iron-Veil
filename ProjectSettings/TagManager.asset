@@ -10,6 +10,10 @@ TagManager:
   - KickLight
   - P1SpaceDetector
   - P2SpaceDetector
+  - P1Left
+  - P1Right
+  - P2Left
+  - P2Right
   layers:
   - Default
   - TransparentFX

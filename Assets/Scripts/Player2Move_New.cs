@@ -32,6 +32,11 @@ public class Player2Move_New : MonoBehaviour
     //public InputActionReference lightPunchAction;
     public InputActionReference blockAction;
 
+    public static bool WalkRight = true;
+    public static bool WalkLeft = true;
+
+    public GameObject Restrict;
+
     void Awake()
     {
         blockAction.action.performed += ctx => OnBlockEvent(ctx); // Subscribe to the block action
@@ -66,6 +71,13 @@ public class Player2Move_New : MonoBehaviour
         Crouch();
         CheckScreenBounds();
         OppPositionMovement();
+
+        // Reset the restrict
+        if (Restrict.activeInHierarchy == false)
+        {
+            WalkLeft = true;
+            WalkRight = true;
+        }
     }
 
     //reaction
@@ -112,15 +124,21 @@ public class Player2Move_New : MonoBehaviour
             float horizontalInput = movementInput.x;
             if (horizontalInput > 0 && canWalkRight) // Moving right
             {
-                anim.SetBool("Forward", true);
-                anim.SetBool("Backward", false);
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                if (WalkRight == true)  //collider checking to walk right
+                {
+                    anim.SetBool("Forward", true);
+                    //anim.SetBool("Backward", false);
+                    transform.Translate(Vector3.right * speed * Time.deltaTime);
+                }
             }
             else if (horizontalInput < 0 && canWalkLeft) // Moving left
             {
-                anim.SetBool("Forward", false);
-                anim.SetBool("Backward", true);
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
+                if (WalkLeft == true)  // collider to not push
+                {
+                    //anim.SetBool("Forward", false);
+                    anim.SetBool("Backward", true);
+                    transform.Translate(Vector3.left * speed * Time.deltaTime);
+                }
             }
             else // No movement
             {

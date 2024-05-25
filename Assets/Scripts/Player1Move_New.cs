@@ -33,6 +33,11 @@ public class Player1Move_New : MonoBehaviour
     //public InputActionReference lightPunchAction;
     public InputActionReference blockAction;
 
+    public static bool WalkRightP1 = true;
+    public static bool WalkLeftP1 = true;
+
+    public GameObject Restrict;
+
     void Awake()
     {
         blockAction.action.performed += ctx => OnBlockEvent(ctx); // Subscribe to the block action
@@ -67,6 +72,13 @@ public class Player1Move_New : MonoBehaviour
         Crouch();
         CheckScreenBounds();
         OppPositionMovement();
+
+        // Reset the restrict
+        if (Restrict.activeInHierarchy == false)
+        {
+            WalkLeftP1 = true;
+            WalkRightP1 = true;
+        }
     }
 
     //reaction
@@ -113,15 +125,21 @@ public class Player1Move_New : MonoBehaviour
             float horizontalInput = movementInput.x;
             if (horizontalInput > 0 && canWalkRight) // Moving right
             {
-                anim.SetBool("Forward", true);
-                anim.SetBool("Backward", false);
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                if (WalkRightP1 == true)  //collider checking to walk right
+                {
+                    anim.SetBool("Forward", true);
+                    //anim.SetBool("Backward", false);
+                    transform.Translate(Vector3.right * speed * Time.deltaTime);
+                }
             }
             else if (horizontalInput < 0 && canWalkLeft) // Moving left
             {
-                anim.SetBool("Forward", false);
-                anim.SetBool("Backward", true);
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
+                if (WalkLeftP1 == true)  // collider to not push
+                {
+                    //anim.SetBool("Forward", false);
+                    anim.SetBool("Backward", true);
+                    transform.Translate(Vector3.left * speed * Time.deltaTime);
+                }
             }
             else // No movement
             {

@@ -9,7 +9,16 @@ public class P2JumpScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("P1SpaceDetector"))
         {
-            Player2.transform.Translate(-0.4f, 0, 0);
+            if (Player2Move_New.FacingRightP2 == true)
+            {
+                Player2.transform.Translate(0.8f, 0, 0);
+
+            }
+            if (Player2Move_New.FacingLeftP2 == true)
+            {
+                Player2.transform.Translate(-0.8f, 0, 0);
+
+            }
         }
     }
 }
