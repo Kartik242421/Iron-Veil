@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CPUSelect : MonoBehaviour
@@ -24,7 +24,7 @@ public class CPUSelect : MonoBehaviour
     public GameObject SynthP2Text;
     public GameObject VanguardP2Text;
 
-    public TextMeshProUGUI Player2Name;
+    public Text Player2Name;
 
     public string CharacterSelectionP2;
 
@@ -36,7 +36,10 @@ public class CPUSelect : MonoBehaviour
     private bool ChangeCharacter = false;
     private AudioSource MyPlayer;
 
-    public int Scene = 1;
+    public int Scene = 4;
+
+    [Header("Mobile UI")]
+    public Text MobileP2;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +64,7 @@ public class CPUSelect : MonoBehaviour
                 CharacterSelectionP2 = "EveP2";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 2)
+            if (IconNumber == 4)
             {
                 SwitchOff();
                 MorakP2.gameObject.SetActive(true);
@@ -79,7 +82,7 @@ public class CPUSelect : MonoBehaviour
                 CharacterSelectionP2 = "MariaP2";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 4)
+            if (IconNumber == 2)
             {
                 SwitchOff();
                 ElyP2.gameObject.SetActive(true);
@@ -195,5 +198,68 @@ public class CPUSelect : MonoBehaviour
         ElyP2Text.gameObject.SetActive(false);
         SynthP2Text.gameObject.SetActive(false);
         VanguardP2Text.gameObject.SetActive(false);
+    }
+
+    //Mobile Controls
+    public void Eve()
+    {
+        SwitchOff();
+        SwitchOff();
+        EveP2.gameObject.SetActive(true);
+        EveP2Text.gameObject.SetActive(true);
+        Player2Name.text = "Eve";
+        CharacterSelectionP2 = "EveP2";
+        ChangeCharacter = false;
+    }
+    public void Ely()
+    {
+        SwitchOff();
+        ElyP2.gameObject.SetActive(true);
+        ElyP2Text.gameObject.SetActive(true);
+        MobileP2.text = "Ely";
+        CharacterSelectionP2 = "ElyP1";
+        ChangeCharacter = false;
+    }
+    public void Morak()
+    {
+        SwitchOff();
+        MorakP2.gameObject.SetActive(true);
+        MorakP2Text.gameObject.SetActive(true);
+        MobileP2.text = "Morak";
+        CharacterSelectionP2 = "MorakP2";
+        ChangeCharacter = false;
+    }
+    public void Synth()
+    {
+        SwitchOff();
+        SynthP2.gameObject.SetActive(true);
+        SynthP2Text.gameObject.SetActive(true);
+        MobileP2.text = "Synth";
+        CharacterSelectionP2 = "SynthP1";
+        ChangeCharacter = false;
+    }
+    public void Marie()
+    {
+        SwitchOff();
+        MariaP2.gameObject.SetActive(true);
+        MariaP2Text.gameObject.SetActive(true);
+        MobileP2.text = "Maria";
+        CharacterSelectionP2 = "MariaP1";
+        ChangeCharacter = false;
+    }
+    public void Vanguard()
+    {
+        SwitchOff();
+        VanguardP2.gameObject.SetActive(true);
+        VanguardP2Text.gameObject.SetActive(true);
+        MobileP2.text = "Vanguard";
+        CharacterSelectionP2 = "VanguardP1";
+        ChangeCharacter = false;
+    }
+    public void choose()
+    {
+        SaveHealthData.P2Select = CharacterSelectionP2;
+        MyPlayer.Play();
+        SceneManager.LoadScene(Scene);
     }
 }

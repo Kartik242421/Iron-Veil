@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Threading;
 
 public class HealthBar : MonoBehaviour
 {
@@ -9,40 +12,84 @@ public class HealthBar : MonoBehaviour
     public Image Player2Green;
     public Image Player1Red;
     public Image Player2Red;
-    // public SaveHealthData SaveHealthData;
+    public Image P1Win1;
+    public Image P1Win2;
+    public Image P2Win1;
+    public Image P2Win2;
+    public TextMeshProUGUI TimerText;
+    public float LevelTime = 90;
+    public GameObject WinCondition;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1.0f;
+        SaveHealthData.Round++;
+        SaveHealthData.TimeOut = true;
+        if (SaveHealthData.Player1Wins == 1)
+        {
+            P1Win1.gameObject.SetActive(true);
+        }
+        if (SaveHealthData.Player1Wins == 2)
+        {
+            P1Win1.gameObject.SetActive(true);
+            P1Win2.gameObject.SetActive(true);
+        }
+        if (SaveHealthData.Player2Wins == 1)
+        {
+            P2Win1.gameObject.SetActive(true);
+        }
+        if (SaveHealthData.Player2Wins == 2)
+        {
+            P2Win1.gameObject.SetActive(true);
+            P2Win2.gameObject.SetActive(true);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Player1Green.fillAmount = SaveHealthData.player1health;
-        Player2Green.fillAmount = SaveHealthData.player2health;
-        
-        if (SaveHealthData.player2Timer > 0)
+        if (SaveHealthData.TimeOut == false)
         {
-            SaveHealthData.player2Timer-= 2.0f * Time.deltaTime;
+            if (LevelTime > 0)
+        {
+            LevelTime -= 1* Time.deltaTime;
+        }
+        if (LevelTime <= 0.1)
+        {
+            SaveHealthData.TimeOut = true;
+            WinCondition.gameObject.SetActive(true);
+            WinCondition.gameObject.GetComponent<WinLose>().enabled=true;
         }
 
-        if (SaveHealthData.player2Timer <= 0)
+        }
+        TimerText.text = Mathf.Round(LevelTime).ToString();
+        
+        Player1Green.fillAmount = SaveHealthData.Player1Health;
+        Player2Green.fillAmount = SaveHealthData.Player2Health;
+        
+        if (SaveHealthData.Player2Timer > 0)
         {
-            if (Player2Red.fillAmount > SaveHealthData.player2health)
+            SaveHealthData.Player2Timer -= 2.0f * Time.deltaTime;
+        }
+
+        if (SaveHealthData.Player2Timer <= 0)
+        {
+            if (Player2Red.fillAmount > SaveHealthData.Player2Health)
             {
                 Player2Red.fillAmount -= 0.003f;
 
             }
         }
-        if (SaveHealthData.player1Timer > 0)
+        if (SaveHealthData.Player1Timer > 0)
         {
-            SaveHealthData.player1Timer -= 2.0f * Time.deltaTime;
+            SaveHealthData.Player1Timer -= 2.0f * Time.deltaTime;
         }
 
-        if (SaveHealthData.player1Timer <= 0)
+        if (SaveHealthData.Player1Timer <= 0)
         {
-            if (Player1Red.fillAmount > SaveHealthData.player1health)
+            if (Player1Red.fillAmount > SaveHealthData.Player1Health)
             {
                 Player1Red.fillAmount -= 0.003f;
 

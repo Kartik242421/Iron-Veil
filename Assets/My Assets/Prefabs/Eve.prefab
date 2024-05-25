@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6062102209698975761}
   - component: {fileID: 1862149828809634867}
   - component: {fileID: 7781530408853008027}
+  - component: {fileID: 3241694381225561527}
   m_Layer: 0
   m_Name: Eve
   m_TagString: Player1
@@ -312,6 +313,27 @@ MonoBehaviour:
   HeavyKick: {fileID: 8300000, guid: baa3e98529e8d094b8e0c35daf8d4dd7, type: 3}
   blockAction: {fileID: -7387842667127760921, guid: 43888cf83fce5b34fbef2272c05bca6b, type: 3}
   Restrict: {fileID: 4197767315665338457}
+--- !u!65 &3241694381225561527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446138653687177858}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 2.0000002, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1824587668725785309
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +555,7 @@ GameObject:
   - component: {fileID: 5832653039256660518}
   - component: {fileID: 4385446458261168471}
   - component: {fileID: 5436422463778742783}
+  - component: {fileID: 7951947584984989627}
   m_Layer: 8
   m_Name: 'LeftFootLightKick '
   m_TagString: KickLight
@@ -584,6 +607,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7951947584984989627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443612076753564183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 5436422463778742783}
 --- !u!1 &2588946402336260504
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +631,7 @@ GameObject:
   - component: {fileID: 7090715588528100515}
   - component: {fileID: 4387348377775285151}
   - component: {fileID: 7157286200026019557}
+  - component: {fileID: 971263781910551216}
   m_Layer: 8
   m_Name: RightFootLightKick
   m_TagString: KickLight
@@ -646,6 +683,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &971263781910551216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588946402336260504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 7157286200026019557}
 --- !u!1 &3038661011512771225
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +707,7 @@ GameObject:
   - component: {fileID: 6878955562677356560}
   - component: {fileID: 2467655540917688823}
   - component: {fileID: 62895039197380343}
+  - component: {fileID: 1536445892726513498}
   m_Layer: 8
   m_Name: LeftFootHeavyKick
   m_TagString: KickHeavy
@@ -708,6 +759,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1536445892726513498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038661011512771225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 62895039197380343}
 --- !u!1 &3908051903823255879
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +888,7 @@ GameObject:
   - component: {fileID: 5571229140682152110}
   - component: {fileID: 887177378444478660}
   - component: {fileID: 4950416496838342339}
+  - component: {fileID: 195531724219243666}
   m_Layer: 8
   m_Name: RightFootHeavyKick
   m_TagString: KickHeavy
@@ -875,6 +940,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &195531724219243666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008175446499952040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 4950416496838342339}
 --- !u!1 &4197767315665338457
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1067,7 @@ GameObject:
   - component: {fileID: 8086503684372778575}
   - component: {fileID: 491055189865937068}
   - component: {fileID: 6183827458942958988}
+  - component: {fileID: 1116855446837764536}
   m_Layer: 8
   m_Name: RightHandHeavyPunch
   m_TagString: FistHeavy
@@ -1040,6 +1119,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1116855446837764536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107006310818428276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 6183827458942958988}
 --- !u!1 &5747622558709296378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1143,7 @@ GameObject:
   - component: {fileID: 5142706536685763085}
   - component: {fileID: 6730851852132493618}
   - component: {fileID: 2435514428196115153}
+  - component: {fileID: 7422373333817633266}
   m_Layer: 8
   m_Name: LeftFistHeavyPunch
   m_TagString: FistHeavy
@@ -1102,6 +1195,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7422373333817633266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747622558709296378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 2435514428196115153}
 --- !u!1 &6974738467118733356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1366,7 @@ GameObject:
   - component: {fileID: 2722008656041786176}
   - component: {fileID: 2865982333611860978}
   - component: {fileID: 9119252075234169176}
+  - component: {fileID: 2177455984473803750}
   m_Layer: 8
   m_Name: RightHandLightPunch
   m_TagString: FistLight
@@ -1311,6 +1418,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2177455984473803750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662020395527383093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 9119252075234169176}
 --- !u!1 &8062026463406093922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,6 +1442,7 @@ GameObject:
   - component: {fileID: 6665247634083438108}
   - component: {fileID: 4504150164541155425}
   - component: {fileID: 5592070446831296352}
+  - component: {fileID: 5197954952375865639}
   m_Layer: 8
   m_Name: LeftFistLightPunch
   m_TagString: FistLight
@@ -1373,6 +1494,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5197954952375865639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062026463406093922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26028891e2b2ba449dc7849fd5ebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 5592070446831296352}
 --- !u!1001 &7348316713289325755
 PrefabInstance:
   m_ObjectHideFlags: 0
