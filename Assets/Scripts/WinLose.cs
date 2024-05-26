@@ -13,7 +13,7 @@ public class WinLose : MonoBehaviour
     public AudioClip LoseAudio;
     public AudioClip Player1WindAudio;
     public AudioClip Player2WindAudio;
-    public float PauseTime = 1.5f;
+    public float PauseTime = 2f;
 
     private int Scene = 8;
 
