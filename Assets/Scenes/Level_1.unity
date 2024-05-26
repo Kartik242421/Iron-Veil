@@ -222,6 +222,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3354181891051303217, guid: 7b9def647454feb45bf35d6045dabc26, type: 3}
   m_PrefabInstance: {fileID: 650069995}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &112748290 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2768674404778360535, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
+  m_PrefabInstance: {fileID: 2653315444621094371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &258804494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,6 +926,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1986491274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &895988837 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1487834895531794472, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
+  m_PrefabInstance: {fileID: 2653315444621094371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &978080574 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3604624426913352033, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
@@ -1050,6 +1060,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 000454fb8b0d0f549b631c1ca289e7b9, type: 3}
+--- !u!198 &1191702497 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1727585560824951232, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
+  m_PrefabInstance: {fileID: 2653315444621094371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1278084881 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7380813348301620332, guid: 601ef1a28b6cbd44d971b60d211befe0, type: 3}
+  m_PrefabInstance: {fileID: 2653315444621094371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400882470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1881,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 136655218361223454, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 1278084881}
+    - target: {fileID: 362642060627009908, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 1191702497}
     - target: {fileID: 525058642831117046, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.25
@@ -1901,14 +1929,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1975121633718039281, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 112748290}
     - target: {fileID: 2252589117728564028, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
       propertyPath: Opponent
       value: 
       objectReference: {fileID: 2653315444621094372}
+    - target: {fileID: 3628565095990749761, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 112748290}
+    - target: {fileID: 4300528545666853820, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 1278084881}
+    - target: {fileID: 4644154392378347996, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 1191702497}
     - target: {fileID: 5394602882345746310, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
       propertyPath: m_Name
       value: Vanguard
       objectReference: {fileID: 0}
+    - target: {fileID: 6878701634002726012, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 895988837}
+    - target: {fileID: 7686887140132755766, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 1278084881}
+    - target: {fileID: 8701297443732536124, guid: ef25b7c9b3724b84e92aed5b6a5ecfc7, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 895988837}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

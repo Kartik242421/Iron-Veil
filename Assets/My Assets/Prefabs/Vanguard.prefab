@@ -180,6 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 6912561862214692378}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &2301821366796679094
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +322,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 8765697923252460792}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &2886463253773537759
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +402,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 65721428893693121}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &3294627936711194548
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +482,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 7312372172670661809}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &4958453699169368465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 8751048964167596626}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &7276967074879746705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 4846678848965351684}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &7327987593668269087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 9103512074254097491}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &7493645900556321141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,6 +1457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 3378011455669146425}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &9107285807837339972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1537,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 6214429218111733584}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1001 &2557122608969969551
 PrefabInstance:
   m_ObjectHideFlags: 0

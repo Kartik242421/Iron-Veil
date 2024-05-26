@@ -160,6 +160,7 @@ public class Player2Move_New : MonoBehaviour
         
         if (!isJumping && playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
         {
+            Time.timeScale = 1.0f;
             float horizontalInput = movementInput.x;
             if (horizontalInput > 0 && canWalkRight) // Moving right
             {

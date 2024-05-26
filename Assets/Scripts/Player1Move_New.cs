@@ -60,13 +60,14 @@ public class Player1Move_New : MonoBehaviour
 
     void Start()
     {
+        Opponent = GameObject.Find("Player2");
         anim = GetComponentInChildren<Animator>();
         MyPlayer = GetComponentInChildren<AudioSource>();
     }
 
     void Update()
     {
-        //check if we are knocked out
+        //check if we are knocked out and play victory animation
         CheckKnockedOut();
 
         playerAnimatorState = anim.GetCurrentAnimatorStateInfo(0); // Get current animator state
@@ -115,6 +116,7 @@ public class Player1Move_New : MonoBehaviour
             StartCoroutine(KnockedOut());
             //this.GetComponent<Player1Move_New>().enabled = false;
         }
+        //Play victory animation
         if (SaveHealthData.Player2Health <= 0)
         {
             anim.SetTrigger("Victory");
