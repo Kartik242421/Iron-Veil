@@ -41,6 +41,8 @@ public class Player1Move_New : MonoBehaviour
     public Rigidbody RB;
     public Collider BoxCollider;
     public Collider CapsuleCollider;
+    public GameObject WinCondition;
+
 
     void Awake()
     {
@@ -60,6 +62,7 @@ public class Player1Move_New : MonoBehaviour
 
     void Start()
     {
+
         Opponent = GameObject.Find("Player2");
         anim = GetComponentInChildren<Animator>();
         MyPlayer = GetComponentInChildren<AudioSource>();
@@ -114,6 +117,8 @@ public class Player1Move_New : MonoBehaviour
             anim.SetTrigger("KnockOut");
             Player1.GetComponent<Player1Action>().enabled = false;
             StartCoroutine(KnockedOut());
+            WinCondition.gameObject.SetActive(true);
+            WinCondition.gameObject.GetComponent<WinLose>().enabled = true;
             //this.GetComponent<Player1Move_New>().enabled = false;
         }
         //Play victory animation
@@ -122,6 +127,8 @@ public class Player1Move_New : MonoBehaviour
             anim.SetTrigger("Victory");
             Player1.GetComponent<Player1Action>().enabled = false;
             this.GetComponent<Player1Move_New>().enabled = false;
+            WinCondition.gameObject.SetActive(true);
+            WinCondition.gameObject.GetComponent<WinLose>().enabled = true;
         }
     }
 
