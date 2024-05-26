@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2player.unity
     guid: 469fe24ef7ef13f4cbc2703c342a2835
+  - enabled: 1
+    path: Assets/Scenes/End Menu.unity
+    guid: 9ecb14b2a3a29924b8bbf1ae49e97105
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d8459815e80a86043b0d3b53a434eea8, type: 2}
