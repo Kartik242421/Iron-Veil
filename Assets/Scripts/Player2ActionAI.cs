@@ -27,15 +27,28 @@ public class Player2ActionAI : MonoBehaviour
     private int AttackNumber = 1;
 
     private bool Attacking = true;
-    public float AttackRate = 1.0f;
+    private float AttackRate = 1.0f;
 
     public static bool Dazed = false;
     public float DazedTime = 3.0f;
 
     void Start()
     {
+        if (SaveHealthData.DifficultyAmt == 1.0)
+        {
+            AttackRate = 0.3f;
+        }
+        if (SaveHealthData.DifficultyAmt == 2.0)
+        {
+            AttackRate = 1.0f;
+        }
+        if (SaveHealthData.DifficultyAmt == 3.0)
+        {
+            AttackRate = 2.0f;
+        }
         anim = GetComponent<Animator>();
         MyPlayer = GetComponent<AudioSource>();
+        Dazed = false;
     }
     void Update()
     {
