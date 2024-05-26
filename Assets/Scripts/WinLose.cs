@@ -13,9 +13,9 @@ public class WinLose : MonoBehaviour
     public AudioClip LoseAudio;
     public AudioClip Player1WindAudio;
     public AudioClip Player2WindAudio;
-    public float PauseTime = 4.0f;
+    public float PauseTime = 1.5f;
 
-    private int Scene = 3;
+    private int Scene = 8;
 
     // Start is called before the first frame update
     void Start()
