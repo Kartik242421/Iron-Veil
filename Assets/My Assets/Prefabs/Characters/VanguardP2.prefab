@@ -175,6 +175,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P12
+  Player2: 1
 --- !u!1 &573994308215094527
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +390,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P14
+  Player2: 1
 --- !u!1 &877176329020016240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,6 +5301,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P11
+  Player2: 1
 --- !u!1 &1382620374430353665
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,7 +5484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5977127061440650715
 Transform:
   m_ObjectHideFlags: 0
@@ -11325,6 +11328,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P11
+  Player2: 1
 --- !u!1 &3531079320934931859
 GameObject:
   m_ObjectHideFlags: 0
@@ -11779,6 +11783,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P13
+  Player2: 1
 --- !u!1 &4262463081277226020
 GameObject:
   m_ObjectHideFlags: 0
@@ -31562,6 +31567,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P13
+  Player2: 1
 --- !u!1 &6170041987892758564
 GameObject:
   m_ObjectHideFlags: 0
@@ -36493,6 +36499,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P12
+  Player2: 1
 --- !u!1 &6840328963566723497
 GameObject:
   m_ObjectHideFlags: 0
@@ -36667,6 +36674,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P14
+  Player2: 1
 --- !u!1 &7268433378580916548
 GameObject:
   m_ObjectHideFlags: 0
@@ -46570,6 +46578,7 @@ MonoBehaviour:
   EmitFX: 1
   PauseSpeed: 0.6
   ParticleType: P12
+  Player2: 1
 --- !u!1 &7712381992243970776
 GameObject:
   m_ObjectHideFlags: 0

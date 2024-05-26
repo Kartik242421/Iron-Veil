@@ -24,15 +24,29 @@ public class Player1Trigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player1Action.Hits == false)
+        if (Player1 == true)
         {
-            col.enabled = true;
+            if (Player1Action.Hits == false)
+            {
+                col.enabled = true;
+            }
+            else
+            {
+                col.enabled = false;
+            }
         }
-        else
+        else if (Player1 == false)
         {
-            col.enabled = false;
+            if (Player2Action.HitsP2 == false)
+            {
+                col.enabled = true;
+            }
+            else
+            {
+                col.enabled = false;
+            }
         }
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {

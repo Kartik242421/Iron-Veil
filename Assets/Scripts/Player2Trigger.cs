@@ -24,13 +24,27 @@ public class Player2Trigger : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-        if (Player2Action.HitsP2 == false)
+        if (Player2 == true)
         {
-            col.enabled = true;
+            if (Player2Action.HitsP2 == false)
+            {
+                col.enabled = true;
+            }
+            else
+            {
+                col.enabled = false;
+            }
         }
-        else
+        else if (Player2 == false)
         {
-            col.enabled = false;
+            if (Player1Action.Hits == false)
+            {
+                col.enabled = true;
+            }
+            else
+            {
+                col.enabled = false;
+            }
         }
 
     }
