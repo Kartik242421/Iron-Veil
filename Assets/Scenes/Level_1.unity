@@ -1123,6 +1123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VanguardP2
       objectReference: {fileID: 0}
+    - target: {fileID: 1565077415401720851, guid: 9d61a28c09c637d468fafed03763273c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5977127061440650715, guid: 9d61a28c09c637d468fafed03763273c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.25
@@ -1236,6 +1240,10 @@ PrefabInstance:
     - target: {fileID: 2083823662208667199, guid: 5554c786fa10a924c942cc219d853e33, type: 3}
       propertyPath: m_Name
       value: EveP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083823662208667199, guid: 5554c786fa10a924c942cc219d853e33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8191911823676635129, guid: 5554c786fa10a924c942cc219d853e33, type: 3}
       propertyPath: m_LocalPosition.x
