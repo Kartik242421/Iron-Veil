@@ -6,13 +6,11 @@ public class Player1Trigger : MonoBehaviour
 {
     public Collider col;
     public float damageAmt = 0.1f;
-
-    public bool EmitFX = false;
-    public ParticleSystem Particles;
     public float PauseSpeed = 0.6f;
 
+    public bool EmitFX = false;
+    private ParticleSystem Particles;
     public string ParticleType = "P21";
-
     private GameObject ChosenParticles;
 
     private void Start()
