@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SwitchOnP1 : MonoBehaviour
 {
     public GameObject P1Character;
     public string P1Name = "Player 1";
     public TextMeshProUGUI P1Text;
-    public GameObject VictoryScreen;
     public float WaitTime = 1.5f;
     private bool Victory = false;
 
@@ -43,8 +43,7 @@ public class SwitchOnP1 : MonoBehaviour
     IEnumerator SetVictory()
     {
         yield return new WaitForSeconds(WaitTime);
-        VictoryScreen.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        SceneManager.LoadScene(8);
     }
 
     IEnumerator IconOff()
