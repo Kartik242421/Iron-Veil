@@ -28290,7 +28290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!198 &4173580954888629646
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -50523,7 +50523,6 @@ MonoBehaviour:
   AICharacter: {fileID: 2432315451023617136, guid: 40bfe1c4baf5b8e418083a8459c2248a, type: 3}
   P2Name: Eve
   P2Text: {fileID: 1312457396354012543}
-  VictoryScreen: {fileID: 0}
   WaitTime: 1.5
 --- !u!199 &7490081567664188926
 ParticleSystemRenderer:
@@ -60025,7 +60024,6 @@ MonoBehaviour:
   AICharacter: {fileID: 6818717323300330334, guid: 6d7bb4e6d88872b439d461e23748ea58, type: 3}
   P2Name: Vanguard
   P2Text: {fileID: 1312457396354012543}
-  VictoryScreen: {fileID: 0}
   WaitTime: 1.5
 --- !u!4 &7640096931040155043
 Transform:
