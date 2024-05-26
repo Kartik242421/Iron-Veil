@@ -62,7 +62,8 @@ public class Player1Move_New : MonoBehaviour
 
     void Start()
     {
-
+        WinCondition = GameObject.Find("WinCondition");
+        WinCondition.gameObject.SetActive(false);
         Opponent = GameObject.Find("Player2");
         anim = GetComponentInChildren<Animator>();
         MyPlayer = GetComponentInChildren<AudioSource>();
