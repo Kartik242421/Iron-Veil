@@ -225,6 +225,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2005085051879577455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5137601820431190736}
+  - component: {fileID: 3463576300302049289}
+  m_Layer: 0
+  m_Name: VanguardP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5137601820431190736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005085051879577455}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1302.8444, y: -44.733025, z: 0}
+  m_LocalScale: {x: 1.8061144, y: 1.8061144, z: 1.8061144}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4226656080494427312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3463576300302049289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005085051879577455}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391d2c1e82bc68468ad5391789bdc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1Character: {fileID: 6823869812341139678, guid: 1f190836abd7aae44976d90e47e54cb9, type: 3}
+  P1Name: Vanguard
+  P1Text: {fileID: 4509522252254491173}
+  VictoryScreen: {fileID: 0}
+  WaitTime: 1.5
 --- !u!1 &2226853542025379320
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +462,10 @@ RectTransform:
   - {fileID: 8950229054999484167}
   - {fileID: 674166904552943647}
   - {fileID: 812671473011168956}
+  - {fileID: 5144341186886005487}
+  - {fileID: 5752201689950676435}
+  - {fileID: 5137601820431190736}
+  - {fileID: 7444607897545809147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1081,6 +1134,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4827161842507442590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5144341186886005487}
+  - component: {fileID: 1847566009126777036}
+  m_Layer: 0
+  m_Name: EveP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5144341186886005487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827161842507442590}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1302.8444, y: -44.733025, z: 0}
+  m_LocalScale: {x: 1.8061144, y: 1.8061144, z: 1.8061144}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4226656080494427312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847566009126777036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827161842507442590}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8391d2c1e82bc68468ad5391789bdc72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1Character: {fileID: 2083823662208667199, guid: 5554c786fa10a924c942cc219d853e33, type: 3}
+  P1Name: Eve
+  P1Text: {fileID: 4509522252254491173}
+  VictoryScreen: {fileID: 0}
+  WaitTime: 1.5
 --- !u!1 &5358226198494907391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,6 +2798,56 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8354870174502557580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7444607897545809147}
+  - component: {fileID: 7632045340101313802}
+  m_Layer: 0
+  m_Name: VanguardP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7444607897545809147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354870174502557580}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1302.8444, y: -44.733025, z: 0}
+  m_LocalScale: {x: 1.8061144, y: 1.8061144, z: 1.8061144}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4226656080494427312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7632045340101313802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8354870174502557580}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e091b54a77f124ebd449885f7083d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P2Character: {fileID: 1565077415401720851, guid: 9d61a28c09c637d468fafed03763273c, type: 3}
+  AICharacter: {fileID: 1565077415401720851, guid: 9d61a28c09c637d468fafed03763273c, type: 3}
+  P2Name: Vanguard
+  P2Text: {fileID: 1312457396210032241}
+  VictoryScreen: {fileID: 0}
+  WaitTime: 1.5
 --- !u!1 &8537755875744391790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2910,3 +3062,53 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8966623789379787452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5752201689950676435}
+  - component: {fileID: 7476723883835885564}
+  m_Layer: 0
+  m_Name: EveP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5752201689950676435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966623789379787452}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1302.8444, y: -44.733025, z: 0}
+  m_LocalScale: {x: 1.8061144, y: 1.8061144, z: 1.8061144}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4226656080494427312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7476723883835885564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966623789379787452}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e091b54a77f124ebd449885f7083d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P2Character: {fileID: 2432315451023617136, guid: 40bfe1c4baf5b8e418083a8459c2248a, type: 3}
+  AICharacter: {fileID: 2432315451023617136, guid: 40bfe1c4baf5b8e418083a8459c2248a, type: 3}
+  P2Name: Eve
+  P2Text: {fileID: 1312457396210032241}
+  VictoryScreen: {fileID: 0}
+  WaitTime: 1.5

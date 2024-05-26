@@ -70,9 +70,12 @@ public class PlayerSpawn : MonoBehaviour
         {
             MyPlayer.clip = Music10;
         }
+
         Player1 = GameObject.Find(SaveHealthData.P1Select);
+        Debug.Log("Player1"+SaveHealthData.P1Select);
         Player1.gameObject.GetComponent<SwitchOnP1>().enabled = true;
         Player2 = GameObject.Find(SaveHealthData.P2Select);
+        Debug.Log("Player2"+SaveHealthData.P2Select);
         Player2.gameObject.GetComponent<SwitchOnP2>().enabled = true;
         StartCoroutine(SpawnPlayers());
 

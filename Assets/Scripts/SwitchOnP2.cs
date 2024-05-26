@@ -5,7 +5,6 @@ using TMPro;
 
 public class SwitchOnP2 : MonoBehaviour
 {
-    public GameObject P2Icon;
     public GameObject P2Character;
     public GameObject AICharacter;
     public string P2Name = "Player 2";
@@ -17,7 +16,6 @@ public class SwitchOnP2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        P2Icon.gameObject.SetActive(true);
         P2Text.text = P2Name;
         if (SaveHealthData.Player1Mode == false)
         {
@@ -59,6 +57,5 @@ public class SwitchOnP2 : MonoBehaviour
     IEnumerator IconOff()
     {
         yield return new WaitForSeconds(WaitTime);
-        P2Icon.gameObject.SetActive(false);
     }
 }

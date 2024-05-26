@@ -5,7 +5,6 @@ using TMPro;
 
 public class SwitchOnP1 : MonoBehaviour
 {
-    public GameObject P1Icon;
     public GameObject P1Character;
     public string P1Name = "Player 1";
     public TextMeshProUGUI P1Text;
@@ -16,7 +15,6 @@ public class SwitchOnP1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        P1Icon.gameObject.SetActive(true);
         P1Text.text = P1Name;
         SaveHealthData.Player1Load = P1Character;
     }
@@ -52,6 +50,5 @@ public class SwitchOnP1 : MonoBehaviour
     IEnumerator IconOff()
     {
         yield return new WaitForSeconds(WaitTime);
-        P1Icon.gameObject.SetActive(false);
     }
 }
