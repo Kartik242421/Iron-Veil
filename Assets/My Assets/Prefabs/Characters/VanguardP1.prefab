@@ -50241,7 +50241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9025076945482283811
 Transform:
   m_ObjectHideFlags: 0
@@ -50516,6 +50516,7 @@ MonoBehaviour:
   RB: {fileID: 1579433558903669780}
   BoxCollider: {fileID: 8959949218558863163}
   CapsuleCollider: {fileID: 762536017370887017}
+  WinCondition: {fileID: 0}
 --- !u!136 &762536017370887017
 CapsuleCollider:
   m_ObjectHideFlags: 0
