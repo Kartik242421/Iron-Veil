@@ -21,7 +21,7 @@ public class MultiplayerScript : MonoBehaviour
     }
     public void TwoPlayerOffline()
     {
-        SaveHealthData.Player1Mode = false;
+       //SaveHealthData.Player1Mode = false;
         SceneManager.LoadScene(PlayerSceneIndex);
     }
     public void TwoPlayerOnline()

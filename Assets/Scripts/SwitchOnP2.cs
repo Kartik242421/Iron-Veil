@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SwitchOnP2 : MonoBehaviour
 {
@@ -9,8 +10,7 @@ public class SwitchOnP2 : MonoBehaviour
     public GameObject AICharacter;
     public string P2Name = "Player 2";
     public TextMeshProUGUI P2Text;
-    public GameObject VictoryScreen;
-    public float WaitTime = 1.5f;
+    public float WaitTime = 1f;
     private bool Victory = false;
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class SwitchOnP2 : MonoBehaviour
     IEnumerator SetVictory()
     {
         yield return new WaitForSeconds(WaitTime);
-        VictoryScreen.gameObject.SetActive(true);
+        SceneManager.LoadScene(8);
         Time.timeScale = 0;
     }
 

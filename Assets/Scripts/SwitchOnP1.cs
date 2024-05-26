@@ -9,7 +9,7 @@ public class SwitchOnP1 : MonoBehaviour
     public GameObject P1Character;
     public string P1Name = "Player 1";
     public TextMeshProUGUI P1Text;
-    public float WaitTime = 1.5f;
+    public float WaitTime = 1f;
     private bool Victory = false;
 
     // Start is called before the first frame update

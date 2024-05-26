@@ -15,7 +15,7 @@ public class WinLose : MonoBehaviour
     public AudioClip Player2WindAudio;
     public float PauseTime = 4.0f;
 
-    private int Scene = 6;
+    private int Scene = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class WinLose : MonoBehaviour
                 WinText.gameObject.SetActive(true);
                 MyPlayer.Play();
                 SaveHealthData.Player1Wins++;
+                Debug.Log(SaveHealthData.Player1Wins);
             }
             else if (SaveHealthData.Player1Mode == false)
             {
