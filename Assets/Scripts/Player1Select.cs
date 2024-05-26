@@ -87,7 +87,7 @@ public class P1Select : MonoBehaviour
                 CharacterSelectionP1 = "MariaP1";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 2)
+            if (IconNumber == 6)
             {
                 SwitchOff();
                 ElyP1.gameObject.SetActive(true);
@@ -105,7 +105,7 @@ public class P1Select : MonoBehaviour
                 CharacterSelectionP1 = "SynthP1";
                 ChangeCharacter = false;
             }
-            if (IconNumber == 6)
+            if (IconNumber == 2)
             {
                 SwitchOff();
                 VanguardP1.gameObject.SetActive(true);
