@@ -10,6 +10,17 @@ public class Player1Trigger : MonoBehaviour
     public bool EmitFX = false;
     public ParticleSystem Particles;
     public float PauseSpeed = 0.6f;
+
+    public string ParticleType = "P21";
+
+    private GameObject ChosenParticles;
+
+    private void Start()
+    {
+        ChosenParticles = GameObject.Find(ParticleType);
+        Particles = ChosenParticles.gameObject.GetComponent<ParticleSystem>();
+    }
+
     // Update is called once per frame
     void Update()
     {

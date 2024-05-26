@@ -59,6 +59,7 @@ public class Player2Move_New : MonoBehaviour
 
     void Start()
     {
+        Opponent = GameObject.Find("Player1");
         anim = GetComponentInChildren<Animator>();
         MyPlayer = GetComponentInChildren<AudioSource>();
     }
