@@ -19,7 +19,7 @@ public class SaveHealthData : MonoBehaviour
     public static GameObject Player1Load;
     public static GameObject Player2Load;
     public static int LevelNumber = 1;
-    public static float DifficultyAmt = 1.0f;
+    public static float DifficultyAmt;
     public static bool P1Reacting = false;
     public static bool P2Reacting = false;
     private int FrameRateTarget = 120;
@@ -49,10 +49,7 @@ public class SaveHealthData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Application.targetFrameRate != FrameRateTarget)
-        {
-            Application.targetFrameRate = FrameRateTarget;
-        }
+
         Debug.Log("Music Volume = " + MusicVol);
         Debug.Log("SFX Volume = " + SFXVol);
     }

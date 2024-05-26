@@ -36,15 +36,15 @@ public class Player2ActionAI : MonoBehaviour
     {
         if (SaveHealthData.DifficultyAmt == 1.0)
         {
-            AttackRate = 0.3f;
+            AttackRate = 1.0f;
         }
         if (SaveHealthData.DifficultyAmt == 2.0)
         {
-            AttackRate = 1.0f;
+            AttackRate = 2.0f;
         }
         if (SaveHealthData.DifficultyAmt == 3.0)
         {
-            AttackRate = 2.0f;
+            AttackRate = 4.0f;
         }
         anim = GetComponent<Animator>();
         MyPlayer = GetComponent<AudioSource>();
