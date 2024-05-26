@@ -624,6 +624,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 5436422463778742783}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &2588946402336260504
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +704,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 7157286200026019557}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &3038661011512771225
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 62895039197380343}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.4
 --- !u!1 &3908051903823255879
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +969,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 4950416496838342339}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.4
 --- !u!1 &4197767315665338457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 6183827458942958988}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.4
 --- !u!1 &5747622558709296378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1232,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 2435514428196115153}
   damageAmt: 0.1
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.4
 --- !u!1 &6974738467118733356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,6 +1459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 9119252075234169176}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1 &8062026463406093922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1539,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 5592070446831296352}
   damageAmt: 0.05
+  EmitFX: 1
+  Particles: {fileID: 0}
+  PauseSpeed: 0.6
 --- !u!1001 &7348316713289325755
 PrefabInstance:
   m_ObjectHideFlags: 0
