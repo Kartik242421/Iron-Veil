@@ -6,7 +6,7 @@ using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using TMPro; // Make sure to include TMPro namespace
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class OnlineLobby : MonoBehaviour
