@@ -26,6 +26,9 @@ public class Player2ActionAI : MonoBehaviour
     public static bool HitsAI = false;
     private int AttackNumber = 1;
 
+    private bool Attacking = true;
+    public float AttackRate = 1.0f;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -42,38 +45,45 @@ public class Player2ActionAI : MonoBehaviour
     public void RandomAttack()
     {
         AttackNumber = Random.Range(1, 5);
-        //if (Player2Move_NewAI.AttackState == true)
-        //{
-        //AttackNumber = Random.Range(1, 5);
-        //}
+        StartCoroutine(SetAttacking());
     }
 
     void StandingAttacks()
     {
         if (playerAnimatorState.IsTag("Motion"))
         {
-            if (AttackNumber == 1)
+            if (Attacking == true)
             {
-                anim.SetTrigger("LightPunch");
-                HitsAI = false;
-            }
-            if (AttackNumber == 2)
-            {
-                anim.SetTrigger("HeavyPunch");
-                HitsAI = false;
-            }
-            if (AttackNumber == 3)
-            {
-                anim.SetTrigger("LightKick");
-                HitsAI = false;
-            }
-            if (AttackNumber == 4)
-            {
-                anim.SetTrigger("HeavyKick");
-                HitsAI = false;
+                Attacking = false;
+                if (AttackNumber == 1)
+                {
+                    anim.SetTrigger("LightPunch");
+                    HitsAI = false;
+                }
+                if (AttackNumber == 2)
+                {
+                    anim.SetTrigger("HeavyPunch");
+                    HitsAI = false;
+                }
+                if (AttackNumber == 3)
+                {
+                    anim.SetTrigger("LightKick");
+                    HitsAI = false;
+                }
+                if (AttackNumber == 4)
+                {
+                    anim.SetTrigger("HeavyKick");
+                    HitsAI = false;
+                }
             }
         }
 
+    }
+
+    IEnumerator SetAttacking()
+    {
+        yield return new WaitForSeconds(AttackRate);
+        Attacking = true;
     }
 
     public void HeavyPunchSlideDirection()
