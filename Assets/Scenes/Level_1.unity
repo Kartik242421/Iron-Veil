@@ -230,21 +230,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1343379257840829487, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3308956705306504508, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3308956705306504508, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172632085605438635, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4226656080494427312, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
       propertyPath: m_Pivot.x
@@ -326,18 +314,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4509522252254491173, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
-      propertyPath: m_text
-      value: Eve
-      objectReference: {fileID: 0}
-    - target: {fileID: 6874833963274933023, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -751.0108
-      objectReference: {fileID: 0}
-    - target: {fileID: 6874833963274933023, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 375.50534
-      objectReference: {fileID: 0}
+    - target: {fileID: 4344454473840867043, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
+      propertyPath: Player1Spawn
+      value: 
+      objectReference: {fileID: 6175472}
+    - target: {fileID: 4344454473840867043, guid: f175bd8f49ee45f4a8bb4290363ddc25, type: 3}
+      propertyPath: Player2Spawn
+      value: 
+      objectReference: {fileID: 460223569}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1135,54 +1119,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music1
-      value: 
-      objectReference: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music2
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e69668668d2d7a4ea120ecf74357ba9, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music3
-      value: 
-      objectReference: {fileID: 8300000, guid: d721df7dc685e7c46a01fd7f763d713f, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music4
-      value: 
-      objectReference: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music5
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e69668668d2d7a4ea120ecf74357ba9, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music6
-      value: 
-      objectReference: {fileID: 8300000, guid: d721df7dc685e7c46a01fd7f763d713f, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music7
-      value: 
-      objectReference: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music8
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e69668668d2d7a4ea120ecf74357ba9, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music9
-      value: 
-      objectReference: {fileID: 8300000, guid: d721df7dc685e7c46a01fd7f763d713f, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Music10
-      value: 
-      objectReference: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Player1Spawn
-      value: 
-      objectReference: {fileID: 6175472}
-    - target: {fileID: 4070324256150943753, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
-      propertyPath: Player2Spawn
-      value: 
-      objectReference: {fileID: 460223569}
     - target: {fileID: 5020380552500852673, guid: 03c8579044a1fa940b13547a3c977d79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

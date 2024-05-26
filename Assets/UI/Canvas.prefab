@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 2291685520067194812}
   - component: {fileID: 7546566229760192574}
   - component: {fileID: 6120941861804252700}
+  - component: {fileID: 4344454473840867043}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -529,7 +530,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 252e0e7c607a0c240a308c94c857bb0e, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -615,6 +616,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4344454473840867043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308956705306504508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fd509b4c81200489818d9a7bb76418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1Spawn: {fileID: 0}
+  Player2Spawn: {fileID: 0}
+  Music1: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
+  Music2: {fileID: 8300000, guid: 1e69668668d2d7a4ea120ecf74357ba9, type: 3}
+  Music3: {fileID: 8300000, guid: d721df7dc685e7c46a01fd7f763d713f, type: 3}
+  Music4: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
+  Music5: {fileID: 8300000, guid: 1e69668668d2d7a4ea120ecf74357ba9, type: 3}
+  Music6: {fileID: 8300000, guid: d721df7dc685e7c46a01fd7f763d713f, type: 3}
+  Music7: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
+  Music8: {fileID: 8300000, guid: 1e69668668d2d7a4ea120ecf74357ba9, type: 3}
+  Music9: {fileID: 8300000, guid: d721df7dc685e7c46a01fd7f763d713f, type: 3}
+  Music10: {fileID: 8300000, guid: b5bc10f4d9bd65243b56e20218638cf8, type: 3}
+  Scene: 0
 --- !u!1 &3630798387916200138
 GameObject:
   m_ObjectHideFlags: 0
