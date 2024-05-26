@@ -42102,7 +42102,8 @@ MonoBehaviour:
   HeavyReactAmt: 4
   PunchWoosh: {fileID: 8300000, guid: f7bbbb1406cfef94b838e6a440cff6f6, type: 3}
   KickWoosh: {fileID: 8300000, guid: 24b866797cc600748bea781ceb71cb55, type: 3}
-  AttackRate: 4
+  AttackRate: 2
+  DazedTime: 3
 --- !u!4 &4981412081765067708
 Transform:
   m_ObjectHideFlags: 0

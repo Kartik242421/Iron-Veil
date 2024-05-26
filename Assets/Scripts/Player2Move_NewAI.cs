@@ -46,6 +46,8 @@ public class Player2Move_NewAI : MonoBehaviour
     private bool MoveAI = true;
     public static bool AttackState = false;
 
+    //private int Defend = 0;
+
     void Awake()
     {
         blockAction.action.performed += ctx => OnBlockEvent(ctx); // Subscribe to the block action
@@ -85,7 +87,7 @@ public class Player2Move_NewAI : MonoBehaviour
         }*/
 
         Jump();
-        Crouch();
+        //Crouch();
         CheckScreenBounds();
         OppPositionMovementAndAIMovement();
 
@@ -98,86 +100,124 @@ public class Player2Move_NewAI : MonoBehaviour
         ColliderOnOff();
     }
 
+    /*void Crouch()
+    {
+        if (Defend == 3)
+        {
+            isCrouching = true;
+            anim.SetBool("Crouch", true);
+            canMove = false; // Disable movement while crouching
+            Defend = 0;
+        }
+    }*/
+
     public void OppPositionMovementAndAIMovement()
     {
         //get Opp position
         OppPosition = Opponent.transform.position;
 
-        
-        //facing left or right of the opponent
-        if (OppPosition.x > Player1.transform.position.x)
+        if (Player2ActionAI.Dazed == false)
         {
-            StartCoroutine(FaceLeft());
-            if (playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
+            //facing left or right of the opponent
+            if (OppPosition.x > Player1.transform.position.x)
             {
-                Time.timeScale = 1.0f;
-                anim.SetBool("CanAttack", false); //disable attacking
-                //moving AI
-                if (OppDistance > AttackDistance && canWalkRight) // Moving right
+
+                StartCoroutine(FaceLeft());
+                if (playerAnimatorState.IsTag("Motion")) 
                 {
-                    if (MoveAI == true)
+                    Time.timeScale = 1.0f;
+                    anim.SetBool("CanAttack", false); //disable attacking
+                                                      //moving AI
+                    if (OppDistance > AttackDistance && canWalkRight) // Moving right
                     {
-                        if (WalkRightAI == true)  //collider checking to walk right
+                        if (MoveAI == true)
                         {
-                            anim.SetBool("Forward", true);
+                            if (WalkRightAI == true)  //collider checking to walk right
+                            {
+                                anim.SetBool("Forward", true);
+                                anim.SetBool("Backward", false);
+                                AttackState = false;
+                                transform.Translate(WalkSpeed * Time.deltaTime * Vector3.right);
+                            }
+                        }
+                    }
+                    if (OppDistance < AttackDistance && canWalkRight)
+                    {
+                        if (MoveAI == true)
+                        {
+                            MoveAI = false;
+                            anim.SetBool("Forward", false);
                             anim.SetBool("Backward", false);
-                            AttackState = false;
-                            transform.Translate(WalkSpeed * Time.deltaTime * Vector3.right);
+                            anim.SetBool("CanAttack", true); //enables attacking
+
+                            StartCoroutine(ForwardFalse());
                         }
                     }
                 }
-                if(OppDistance < AttackDistance && canWalkRight)
-                {
-                    if (MoveAI == true)
-                    {
-                        MoveAI = false;
-                        anim.SetBool("Forward", false);
-                        anim.SetBool("Backward", false);
-                        anim.SetBool("CanAttack", true); //enables attacking
+            }
 
-                        StartCoroutine(ForwardFalse());
+
+            if (OppPosition.x < Player1.transform.position.x)
+            {
+                StartCoroutine(FaceRight());
+                //moving AI
+                if (playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
+                {
+                    Time.timeScale = 1.0f;
+                    anim.SetBool("CanAttack", false);  //set attacking to false
+
+                    if (OppDistance > AttackDistance && canWalkLeft) // Moving right
+                    {
+                        if (MoveAI == true)
+                        {
+                            if (WalkLeftAI == true)  //collider checking to walk right
+                            {
+                                anim.SetBool("Backward", true);
+                                anim.SetBool("Forward", false);
+                                AttackState = false;
+
+                                transform.Translate(-WalkSpeed * Time.deltaTime * Vector3.right);
+                            }
+                        }
+                    }
+                    if (OppDistance < AttackDistance && canWalkLeft)
+                    {
+                        if (MoveAI == true)
+                        {
+                            MoveAI = false;
+                            anim.SetBool("Forward", false);
+                            anim.SetBool("Backward", false);
+                            anim.SetBool("CanAttack", true); //set attacking true
+
+                            StartCoroutine(ForwardFalse());
+                        }
                     }
                 }
-               
             }
+        }
+    }
+    IEnumerator FaceRight()
+    {
+        if (FacingRightAI == true)
+        {
+            FacingRightAI = false;
+            FacingLeftAI = true;
+            yield return new WaitForSeconds(0.15f);
+            Player1.transform.Rotate(0, 180, 0);
+
+            anim.SetLayerWeight(1, 1);
 
         }
-        if (OppPosition.x < Player1.transform.position.x)
+    }
+    IEnumerator FaceLeft()
+    {
+        if (FacingLeftAI == true)
         {
-            StartCoroutine(FaceRight());
-            //moving AI
-            if (playerAnimatorState.IsTag("Motion")) // Only allow movement if not jumping and in motion state
-            {
-                Time.timeScale = 1.0f;
-                anim.SetBool("CanAttack", false);  //set attacking to false
-
-                if (OppDistance > AttackDistance && canWalkLeft) // Moving right
-                {
-                    if (MoveAI == true)
-                    {
-                        if (WalkLeftAI == true)  //collider checking to walk right
-                        {
-                            anim.SetBool("Backward", true);
-                            anim.SetBool("Forward", false);
-                            AttackState = false;
-
-                            transform.Translate(-WalkSpeed * Time.deltaTime * Vector3.right);
-                        }
-                    }
-                }
-                if (OppDistance < AttackDistance && canWalkLeft)
-                {
-                    if (MoveAI == true)
-                    {
-                        MoveAI = false;
-                        anim.SetBool("Forward", false);
-                        anim.SetBool("Backward", false);
-                        anim.SetBool("CanAttack", true); //set attacking true
-
-                        StartCoroutine(ForwardFalse());
-                    }
-                }
-            }
+            FacingLeftAI = false;
+            FacingRightAI = true;
+            yield return new WaitForSeconds(0.15f);
+            Player1.transform.Rotate(0, 180, 0);
+            anim.SetLayerWeight(1, 0);
         }
     }
 
@@ -228,6 +268,7 @@ public class Player2Move_NewAI : MonoBehaviour
             anim.SetTrigger("HeadReact");
             MyPlayer.clip = LightPunch;
             MyPlayer.Play();
+            //Defend = Random.Range(0, 5);
         }
         if (other.gameObject.CompareTag("FistHeavy"))
         {
@@ -246,6 +287,8 @@ public class Player2Move_NewAI : MonoBehaviour
             anim.SetTrigger("HeadReact");
             MyPlayer.clip = LightKick;
             MyPlayer.Play();
+            //Defend = Random.Range(0, 5);
+
         }
     }
 
@@ -307,21 +350,7 @@ public class Player2Move_NewAI : MonoBehaviour
         canMove = true; // Enable movement after finishing jump animation
     }
 
-    void Crouch()
-    {
-        if (movementInput.y < 0 && !isCrouching && !isJumping)
-        {
-            isCrouching = true;
-            anim.SetBool("Crouch", true);
-            canMove = false; // Disable movement while crouching
-        }
-        else if (movementInput.y == 0 && isCrouching)
-        {
-            isCrouching = false;
-            anim.SetBool("Crouch", false);
-            canMove = true; // Enable movement after standing up from crouch
-        }
-    }
+    
 
     void CheckScreenBounds()
     {
@@ -344,30 +373,7 @@ public class Player2Move_NewAI : MonoBehaviour
     
 
 
-    IEnumerator FaceRight()
-    {
-        if (FacingRightAI == true)
-        {
-            FacingRightAI = false;
-            FacingLeftAI = true;
-            yield return new WaitForSeconds(0.15f);
-            Player1.transform.Rotate(0, 180, 0);
-
-            anim.SetLayerWeight(1, 1);
-
-        }
-    }
-    IEnumerator FaceLeft()
-    {
-        if (FacingLeftAI == true)
-        {
-            FacingLeftAI = false;
-            FacingRightAI = true;
-            yield return new WaitForSeconds(0.15f);
-            Player1.transform.Rotate(0, 180, 0);
-            anim.SetLayerWeight(1, 0);
-        }
-    }
+    
 
     public void OnBlockEvent(InputAction.CallbackContext ctx)
     {

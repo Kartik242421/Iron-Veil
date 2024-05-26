@@ -29,6 +29,9 @@ public class Player2ActionAI : MonoBehaviour
     private bool Attacking = true;
     public float AttackRate = 1.0f;
 
+    public static bool Dazed = false;
+    public float DazedTime = 3.0f;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -40,6 +43,13 @@ public class Player2ActionAI : MonoBehaviour
         StandingAttacks();
         HeavyPunchSlideDirection();
         HeavyReactSlideDirection();
+        
+        /*if (playerAnimatorState.IsTag("Motion") && playerAnimatorState.IsTag("Crouching"))
+        {
+            anim.SetTrigger("LightKick");
+            HitsAI = false;
+            anim.SetBool("Crouch", false);
+        }*/
     }
 
     public void RandomAttack()
@@ -59,21 +69,29 @@ public class Player2ActionAI : MonoBehaviour
                 {
                     anim.SetTrigger("LightPunch");
                     HitsAI = false;
+                    StartCoroutine(SetAttacking());
+
                 }
                 if (AttackNumber == 2)
                 {
                     anim.SetTrigger("HeavyPunch");
                     HitsAI = false;
+                    StartCoroutine(SetAttacking());
+
                 }
                 if (AttackNumber == 3)
                 {
                     anim.SetTrigger("LightKick");
                     HitsAI = false;
+                    StartCoroutine(SetAttacking());
+
                 }
                 if (AttackNumber == 4)
                 {
                     anim.SetTrigger("HeavyKick");
                     HitsAI = false;
+                    StartCoroutine(SetAttacking());
+
                 }
             }
         }
@@ -139,11 +157,14 @@ public class Player2ActionAI : MonoBehaviour
     IEnumerator HeavySlide()
     {
         HeavyReact = true;
+        Dazed = true;
         yield return new WaitForSeconds(0.3f);
         HeavyReact = false;
+        yield return new WaitForSeconds(DazedTime);
+        Dazed = false;
     }
 
-    
+
 
 
     //predefined function for attacking & jumping:-
