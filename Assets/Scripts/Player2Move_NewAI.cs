@@ -43,7 +43,7 @@ public class Player2Move_NewAI : MonoBehaviour
 
     private float OppDistance;
     public float AttackDistance = 1.5f;
-    private bool MoveAI = true;
+    private bool MoveAI = false;
     public static bool AttackState = false;
 
     //private int Defend = 0;
@@ -69,6 +69,8 @@ public class Player2Move_NewAI : MonoBehaviour
         Opponent = GameObject.Find("Player1");
         anim = GetComponentInChildren<Animator>();
         MyPlayer = GetComponentInChildren<AudioSource>();
+        StartCoroutine(EnableMoveAfterDelay());
+
     }
 
     void Update()
@@ -188,7 +190,6 @@ public class Player2Move_NewAI : MonoBehaviour
                             anim.SetBool("Forward", false);
                             anim.SetBool("Backward", false);
                             anim.SetBool("CanAttack", true); //set attacking true
-
                             StartCoroutine(ForwardFalse());
                         }
                     }
@@ -403,5 +404,10 @@ public class Player2Move_NewAI : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         this.GetComponent<Player2Move_NewAI>().enabled = false;
+    }
+    IEnumerator EnableMoveAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        MoveAI = true;
     }
 }
